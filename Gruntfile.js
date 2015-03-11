@@ -19,22 +19,23 @@ module.exports = function(grunt) {
       },
       all: {
         files: {
-          'dist/upup.min.js': ['src/upup.js']
+          'dist/upup.min.js': ['src/upup.js'],
+          'dist/upup.sw.min.js': ['src/upup.sw.js'],
         }
       }
     },
     watch: {
-      files: ['src/upup.js', '!**/node_modules/**'],
+      files: ['src/*', '!**/node_modules/**'],
       tasks: ['default'],
     },
     connect: {
       server: {
         options: {
-          protocol: 'https',
+          protocol: 'http',
           port: 8443,
           hostname: '*',
           base: '.',
-          open: 'https://localhost:8443/demo'
+          open: 'http://localhost:8443/demo'
         }
       }
     }

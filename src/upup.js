@@ -20,6 +20,11 @@
     return undefined;
   }
 
+  // Settings live here, and these are their defaults
+  var _settings = {
+    'script': 'upup.sw.min.js'
+  };
+
   // Expose functionality
   _root.UpUp = {
 
@@ -42,6 +47,15 @@
      */
     start: function(settings) {
       this.addSettings(settings);
+
+      // register the service worker
+      _sw.register(_settings.script, {scope: './'}).then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
     },
 
     /**
@@ -64,6 +78,7 @@
      */
     addSettings: function(settings) {
       settings = settings || {};
+      _settings['content'] = settings['content'] || null;
     }
 
   };
