@@ -1,7 +1,7 @@
 {
   "name": "UpUpUp",
   "version": "0.0.1",
-  "description": "Make sure your site never goes… down.",
+  "description": "Make sure your site never goes… !up.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
