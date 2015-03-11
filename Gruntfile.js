@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       all: [
-        'src/upupup.js',
+        'src/upup.js',
         'Gruntfile.js'
       ],
       options: {
@@ -19,12 +19,12 @@ module.exports = function(grunt) {
       },
       all: {
         files: {
-          'dist/upupup.min.js': ['src/upupup.js']
+          'dist/upup.min.js': ['src/upup.js']
         }
       }
     },
     watch: {
-      files: ['src/upupup.js', '!**/node_modules/**'],
+      files: ['src/upup.js', '!**/node_modules/**'],
       tasks: ['default'],
     },
     connect: {

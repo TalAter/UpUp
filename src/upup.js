@@ -1,8 +1,8 @@
-//! UpUpUp
+//! UpUp
 //! version : 0.0.1
 //! author  : Tal Ater @TalAter
 //! license : MIT
-//! https://github.com/TalAter/UpUpUp
+//! https://github.com/TalAter/UpUp
 
 (function (undefined) {
   "use strict";
@@ -16,12 +16,12 @@
   // Check browser support
   // This is done as early as possible, to make it as fast as possible for unsupported browsers
   if (!_sw) {
-    _root.UpUpUp = null;
+    _root.UpUp = null;
     return undefined;
   }
 
   // Expose functionality
-  _root.UpUpUp = {
+  _root.UpUp = {
 
     /**
      * Make this site available offline
@@ -32,10 +32,10 @@
      *
      * ### Examples:
      *     // Set up offline mode with a basic message
-     *     UpUpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+     *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
      *
      *     // Set up offline mode with the settings defined previously via addSettings()
-     *     UpUpUp.start();
+     *     UpUp.start();
      *
      * @param {Object} [settings] - Settings for offline mode
      * @method start
@@ -45,18 +45,18 @@
     },
 
     /**
-     * Adds settings to configure how UpUpUp behaves.
+     * Adds settings to configure how UpUp behaves.
      * Call this before running start, or just pass the settings object when calling the start method.
      *
      * Receives a mandatory settings object. See Settings section of docs for details.
      *
      * ### Examples:
      *     // Set up offline mode with a basic message
-     *     UpUpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
-     *     UpUpUp.start();
+     *     UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
+     *     UpUp.start();
      *
      *     // The same thing can be achieved like this
-     *     UpUpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+     *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
      *
      * @param {Object} [settings] - Settings for offline mode
      * @method addSettings
@@ -75,16 +75,16 @@
  *
  * ## Settings
  *
- * UpUpUp can be configured either by calling addSettings() with a settings object, or by passing the
+ * UpUp can be configured either by calling addSettings() with a settings object, or by passing the
  * same settings object directly to the start() method.
  *
  * ### Examples:
  *     // Set up offline mode with a basic message
- *     UpUpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
- *     UpUpUp.start();
+ *     UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
+ *     UpUp.start();
  *
  *     // The same thing can be achieved like this
- *     UpUpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+ *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
  *
  *
  * The settings object supports the following options:
