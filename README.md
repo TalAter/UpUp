@@ -1,2 +1,2 @@
 # UpUpUp
-### Make sure your site never goes… !up.
+### Make sure your site never goes… !up
