@@ -38,6 +38,13 @@ module.exports = function(grunt) {
           open: 'http://localhost:8443/demo'
         }
       }
+    },
+    markdox: {
+      target: {
+        files: [
+          {src: 'src/upup.js', dest: 'docs/README.md'}
+        ]
+      }
     }
   });
 
@@ -46,6 +53,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-markdox');
 
   // Default task(s).
   grunt.registerTask('default', ['jshint', 'uglify']);

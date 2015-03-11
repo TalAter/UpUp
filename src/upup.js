@@ -7,6 +7,35 @@
 (function (undefined) {
   "use strict";
 
+  /**
+   * # Quick Start
+   *
+   * The quickest way to get started is to visit the [UpUp homepage](https://github.com/TalAter/UpUp).
+   *
+   * For a more in-depth look at UpUp, read on.
+   *
+   * # Good to Know
+   *
+   * ## Settings
+   *
+   * UpUp can be configured either by calling addSettings() with a settings object, or by passing the
+   * same settings object directly to the start() method.
+   *
+   * #### Examples:
+   *     // Set up offline mode with a basic message
+   *     UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
+   *     UpUp.start();
+   *
+   *     // The same thing can be achieved like this
+   *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+   *
+   *
+   * The settings object supports the following options:
+   * - `content`      (String) The content to display when user is offline.
+   *
+   * # API Reference
+   */
+
   // Save a reference to the global object (window in the browser)
   var _root = this;
 
@@ -33,9 +62,8 @@
      *
      * Can receive a settings object directly, or be configured by running addSettings() first.
      * See Settings section of docs for details.
-     * - `content`      (String) The content to display when user is offline.
      *
-     * ### Examples:
+     * #### Examples:
      *     // Set up offline mode with a basic message
      *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
      *
@@ -64,7 +92,7 @@
      *
      * Receives a mandatory settings object. See Settings section of docs for details.
      *
-     * ### Examples:
+     * #### Examples:
      *     // Set up offline mode with a basic message
      *     UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
      *     UpUp.start();
@@ -84,24 +112,3 @@
   };
 
 }).call(this);
-
-/**
- * # Good to Know
- *
- * ## Settings
- *
- * UpUp can be configured either by calling addSettings() with a settings object, or by passing the
- * same settings object directly to the start() method.
- *
- * ### Examples:
- *     // Set up offline mode with a basic message
- *     UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
- *     UpUp.start();
- *
- *     // The same thing can be achieved like this
- *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
- *
- *
- * The settings object supports the following options:
- * - `content`      (String) The content to display when user is offline.
- */
