@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       all: {
         files: {
           'dist/upup.min.js': ['src/upup.js'],
-          'dist/upup.sw.min.js': ['src/upup.sw.js'],
+          'dist/upup.sw.min.js': ['src/vendor/serviceworker-cache-polyfill.js', 'src/upup.sw.js'],
         }
       }
     },
