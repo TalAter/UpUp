@@ -21,11 +21,23 @@ self.addEventListener('install', function(event) {
   );
 });
 
+// Register message event listener
+self.addEventListener('message', function(event) {
+  // place offline message in cache
+  if (event.data.action === 'set-content') {
+    event.waitUntil(
+      caches.open(CACHE_NAME).then(function(cache) {
+        return cache.put('sw-offline-content', new Response(event.data.content));
+      })
+    );
+  }
+});
+
 // Register fetch event listener
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     fetch(event.request.url).catch(function() {
-        return caches.match('sw-offline-content');
+      return caches.match('sw-offline-content')
     })
   );
 });
