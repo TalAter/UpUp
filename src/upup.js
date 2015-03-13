@@ -54,11 +54,6 @@
     'script': 'upup.sw.min.js'
   };
 
-  // Set offline content in the cache
-  var _setOfflineContent = function(content) {
-    _sw.controller.postMessage({'action': 'set-content', 'content': content});
-  };
-
   // Expose functionality
   _root.UpUp = {
 
@@ -86,11 +81,9 @@
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
 
-        // See if ServiceWorker is already controlling this request (i.e. it was registered in a previous request)
-        if (_sw.controller) {
-          // Send the content for the offline mode to the ServiceWorker
-          _setOfflineContent(_settings.content);
-        }
+        // Send the settings to the ServiceWorker
+        var messenger = registration.installing || _sw.controller;
+        messenger.postMessage({'action': 'set-settings', 'settings': _settings});
 
       }).catch(function(err) {
         // registration failed :(
