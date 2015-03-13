@@ -6,7 +6,7 @@
 //! https://github.com/TalAter/UpUp
 
 // serviceworker-cache-polyfill.js is included here when building distribution files.
-// If you're using the unminified version, make sure you:
+// If you're using the unminified version of this script, make sure you:
 // importScripts('serviceworker-cache-polyfill.js');
 
 // Name of our cache
