@@ -67,5 +67,14 @@ See: [Settings](#settings)
 
 * **Object** *[settings]* - Settings for offline mode
 
+## debug([newState=true])
+
+Turn on or off the output of debug messages to the console.
+Don't pass any parameters to turn on, or pass a boolean to control debug state.
+
+### Params:
+
+* **Boolean** *[newState=true]* - Turn on/off debug messages
+
 <!-- End src/upup.js -->
 

@@ -54,6 +54,9 @@
     'script': 'upup.sw.min.js'
   };
 
+  var _debugState = false;
+  var _debugStyle = 'font-weight: bold; color: #00f;';
+
   // Expose functionality
   _root.UpUp = {
 
@@ -79,7 +82,9 @@
       // register the service worker
       _sw.register(_settings.script, {scope: './'}).then(function(registration) {
         // Registration was successful
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        if (_debugState) {
+          console.log('ServiceWorker registration successful with scope: %c'+registration.scope, _debugStyle);
+        }
 
         // Send the settings to the ServiceWorker
         var messenger = registration.installing || _sw.controller;
@@ -87,7 +92,9 @@
 
       }).catch(function(err) {
         // registration failed :(
-        console.log('ServiceWorker registration failed: ', err);
+        if (_debugState) {
+          console.log('ServiceWorker registration failed: %c'+err, _debugStyle);
+        }
       });
     },
 
@@ -112,6 +119,21 @@
     addSettings: function(settings) {
       settings = settings || {};
       _settings['content'] = settings['content'] || null;
+    },
+
+    /**
+     * Turn on or off the output of debug messages to the console.
+     * Don't pass any parameters to turn on, or pass a boolean to control debug state.
+     *
+     * @param {Boolean} [newState=true] - Turn on/off debug messages
+     * @method debug
+     */
+    debug: function(newState) {
+      if (arguments.length > 0) {
+        _debugState = !!newState;
+      } else {
+        _debugState = true;
+      }
     }
 
   };

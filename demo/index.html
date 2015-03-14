@@ -4,12 +4,17 @@
   <title>UpUp - Make sure your site never goes… !up.</title>
 </head>
 <body>
-
   <h1>UpUp - Make sure your site never goes&hellip; !up</h1>
   <p>You obviously have internets&hellip; feel free to change this.</p>
 <script src="upup.min.js"></script>
 <script>
-  UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+  // Let's turn on debugging messages
+  UpUp.debug();
+
+  // Let's start UpUp with some basic settings
+  UpUp.start(
+    { content: 'Cannot reach site. Please check your internet connection.' }
+  );
 </script>
 </body>
 </html>
