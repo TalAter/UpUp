@@ -40,11 +40,11 @@
   var _root = this;
 
   // get ServiceWorker object
-  var _sw = navigator.serviceWorker;
+  var _serviceWorker = navigator.serviceWorker;
 
   // Check browser support
   // This is done as early as possible, to make it as fast as possible for unsupported browsers
-  if (!_sw) {
+  if (!_serviceWorker) {
     _root.UpUp = null;
     return undefined;
   }
@@ -80,14 +80,14 @@
       this.addSettings(settings);
 
       // register the service worker
-      _sw.register(_settings.script, {scope: './'}).then(function(registration) {
+      _serviceWorker.register(_settings.script, {scope: './'}).then(function(registration) {
         // Registration was successful
         if (_debugState) {
           console.log('ServiceWorker registration successful with scope: %c'+registration.scope, _debugStyle);
         }
 
         // Send the settings to the ServiceWorker
-        var messenger = registration.installing || _sw.controller;
+        var messenger = registration.installing || _serviceWorker.controller;
         messenger.postMessage({'action': 'set-settings', 'settings': _settings});
 
       }).catch(function(err) {
