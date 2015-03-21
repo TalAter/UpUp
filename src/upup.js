@@ -119,6 +119,13 @@
      */
     addSettings: function(settings) {
       settings = settings || {};
+
+      // if we got a string, instead of a settings object, use that string as the content
+      if (typeof settings === 'string') {
+        settings = {'content': settings};
+      }
+
+      // add new settings to our settings object
       _settings['content'] = settings['content'] || null;
     },
 
