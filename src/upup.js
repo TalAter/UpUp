@@ -126,7 +126,7 @@
       }
 
       // add new settings to our settings object
-      ['content', 'content-url'].forEach(function(settingName) {
+      ['content', 'content-url', 'assets'].forEach(function(settingName) {
         _settings[settingName] = settings[settingName] || null;
       });
     },
