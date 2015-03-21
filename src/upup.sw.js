@@ -12,25 +12,11 @@
 // Name of our cache
 var _CACHE_NAME = 'upup-cache';
 
-// Register install event listener
-self.addEventListener('install', function(event) {
-  // place default offline message in cache
-  event.waitUntil(
-    caches.open(_CACHE_NAME).then(function(cache) {
-      return cache.put('sw-offline-content', new Response("You are offline"));
-    })
-  );
-});
-
 // Register message event listener
 self.addEventListener('message', function(event) {
   // place offline message in cache
   if (event.data.action === 'set-settings') {
-    event.waitUntil(
-      caches.open(_CACHE_NAME).then(function(cache) {
-        return cache.put('sw-offline-content', new Response(event.data.settings.content));
-      })
-    );
+    _setSettings(event.data.settings)
   }
 });
 
@@ -42,3 +28,14 @@ self.addEventListener('fetch', function(event) {
     })
   );
 });
+
+var _setSettings = function(settings) {
+  return caches.open(_CACHE_NAME).then(function(cache) {
+    // Store our offline content in the cache
+    if (settings.content) {
+      return cache.put('sw-offline-content', new Response(settings.content));
+    } else {
+      return cache.put('sw-offline-content', new Response("You are offline"));
+    }
+  });
+};
