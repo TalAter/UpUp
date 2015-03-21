@@ -127,6 +127,7 @@
 
       // add new settings to our settings object
       _settings['content'] = settings['content'] || null;
+      _settings['content-url'] = settings['content-url'] || null;
     },
 
     /**

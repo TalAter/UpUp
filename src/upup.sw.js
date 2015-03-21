@@ -32,7 +32,11 @@ self.addEventListener('fetch', function(event) {
 var _setSettings = function(settings) {
   return caches.open(_CACHE_NAME).then(function(cache) {
     // Store our offline content in the cache
-    if (settings.content) {
+    if (settings['content-url']) {
+      return fetch(settings['content-url']).then(function(response) {
+        return cache.put('sw-offline-content', response);
+      });
+    } else if (settings.content) {
       return cache.put('sw-offline-content', _buildResponse(settings.content));
     } else {
       return cache.put('sw-offline-content', _buildResponse("You are offline"));
