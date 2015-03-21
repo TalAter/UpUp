@@ -33,9 +33,15 @@ var _setSettings = function(settings) {
   return caches.open(_CACHE_NAME).then(function(cache) {
     // Store our offline content in the cache
     if (settings.content) {
-      return cache.put('sw-offline-content', new Response(settings.content));
+      return cache.put('sw-offline-content', _buildResponse(settings.content));
     } else {
-      return cache.put('sw-offline-content', new Response("You are offline"));
+      return cache.put('sw-offline-content', _buildResponse("You are offline"));
     }
   });
 };
+
+var _buildResponse = function(content) {
+  return new Response(content, {
+    headers: { 'Content-Type': 'text/html' }
+  });
+}
