@@ -11,10 +11,9 @@ var getBestsellers = function() {
 };
 
 var displayBestsellers = function(data) {
-  console.log(data);
   var bestSellersLIs = '';
-  data.results.forEach(function(bestseller) {
-    bestSellersLIs += '<li>'+bestseller['book_details'][0].title.toLowerCase()+'</li>';
+  data.results.slice(0,10).forEach(function(bestseller) {
+    bestSellersLIs += '<li title="'+bestseller['book_details'][0].description+'"><strong>'+bestseller['book_details'][0].title+'</strong><span> by '+bestseller['book_details'][0].author+'<span></li>';
   });
   var bestsellersList = document.getElementById('bestsellers');
   bestsellersList.innerHTML = bestSellersLIs;

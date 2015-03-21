@@ -1,16 +1,45 @@
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>Sample offline content</title>
-  <link rel="stylesheet" href="css/offline.css">
-</head>
-<body>
-  <img src="img/rocket.png" alt="Off to space. brb.">
-  <h1>Looks like you're offline</h1>
-  <div>
-    <ol id="bestsellers">
-    </ol>
-  </div>
-  <script src="js/offline.js"></script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample offline content</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/offline.css">
+  </head>
+  <body>
+    <div class="container" id="top-container">
+      <div class="row text-center">
+        <div class="col-lg-12">
+          <h1>Looks like you’re somewhere<br />without an internet connection.</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm-4" id="about-upup">
+          <h2>Lucky for you, UpUp serves content even when your users are on a plane flying over the pacific, or 20,000 leagues under the sea.</h2>
+          <h2>Want proof?</h2>
+        </div>
+        <div class="col-sm-4">
+          <h3>Here's the current New York Times bestsellers list:</h3>
+          <ol id="bestsellers">
+          </ol>
+        </div>
+        <div class="col-sm-2">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-12">
+          <h2>Visit <a href="http://upup.rocks/">http://upup.rocks</a> to find out how you can add this to your site.</h2>
+        </div>
+      </div>
+    </div>
+    <script src="js/offline.js"></script>
+  </body>
 </html>
