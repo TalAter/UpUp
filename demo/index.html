@@ -1,11 +1,30 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>UpUp - Make sure your site never goes… !up.</title>
+  <title>UpUp - Make sure your site never is always there for your users.</title>
 </head>
 <body>
-  <h1>UpUp - Make sure your site never goes&hellip; !up</h1>
-  <p>You obviously have internets&hellip; feel free to change this.</p>
+  <h1>A tiny script that makes sure your site is always there for your users</h1>
+  <h2>(even when they're on a plane over the Atlantic, or 20,000 leagues under the sea)</h2>
+  <p>Imagine opening TripAdvisor on your laptop and getting the top 5 attractions in Rome, half an hour after take-off from JFK.</p>
+  <p>Imagine opening Booking.com on your tablet and seeing the address for your hotel reservation, while on the cab from the airport.</p>
+  <p>Imagine checking your corporate site from your phone in that one spot in your house where the wi-fi is never good enough (you know the place) and getting a list of your upcoming meetings for the day.</p>
+  <hr />
+  <p>Want proof? Disconnect from the internet and reload this page&hellip; we promise it will blow you away!</p>
+  <hr />
+  <p>The days when you could count on your visitors sitting at their desktops, with a wire connecting them to the internet are long gone. Today, your users are visiting your site from a phone in the elevator, from their tablet on the subway, or on their laptop while they sit cramped into seat 25 E.</p>
+  <p>Luckily, modern browsers support technologies that let you serve your content to your users, even when they are offline.</p>
+  <p>UpUp makes all of this modern magic as simple as calling one command.</p>
+  <pre><code class="javascript">
+&lt;script src="upup.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  UpUp.start({
+    'content-url': 'offline.html' // show this to page to offline users
+  });
+&lt;/script&gt;
+</code></pre>
+  <p>It's time to start the <strong>offline-first</strong> revolution.</p>
+
 <script src="upup.min.js"></script>
 <script>
   // Let's turn on debugging messages
@@ -17,5 +36,9 @@
     'assets': ['img/porthole.png', 'css/offline.css', 'css/bootstrap.min.css', 'js/offline.js', 'nyt-bestsellers.json']
   });
 </script>
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
