@@ -1,0 +1,72 @@
+body {
+  font-size: 16px;
+  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  margin: 0 0;
+  padding: 0 0;
+  color: #000;
+  font-weight: 300;
+}
+header {
+  text-align: center;
+  background: url('../img/sunset.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  padding: 100px 0;
+  height: 80%;
+  color: #fff;
+}
+h1, h2 {
+  font-weight: 300;
+  max-width: 850px;
+}
+h1 {
+  margin-top: 100px;
+  font-size: 60px
+}
+h2 {
+  font-size: 24px
+}
+p {
+  font-size: 22px
+}
+div.show-and-tell {
+  margin-top: -75px;
+}
+div.container {
+  max-width: 850px;
+}
+hr {
+  margin: 50px 0;
+}
+
+pre {
+  margin: 30px auto 50px;
+}
+pre, code{
+  background-color: #f0f0f0;
+  border-color: #f0f0f0!important;
+  border-radius: 0;
+  padding: 0 0;
+  font-size: 12px;
+}
+code strong {
+  color: #8a0000;
+  font-weight: normal;
+}
+code .html {
+  color: #777;
+}
+code .comment {
+  color: #aaa;
+}
+
+.footer {
+  margin-bottom: 30px;
+}
+.footer p {
+  font-size: 11px;
+  margin: 0 0;
+}

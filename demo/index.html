@@ -2,43 +2,77 @@
 <head>
   <meta charset="UTF-8">
   <title>UpUp - Make sure your site never is always there for your users.</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/online.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <h1>A tiny script that makes sure your site is always there for your users</h1>
-  <h2>(even when they're on a plane over the Atlantic, or 20,000 leagues under the sea)</h2>
-  <p>Imagine opening TripAdvisor on your laptop and getting the top 5 attractions in Rome, half an hour after take-off from JFK.</p>
-  <p>Imagine opening Booking.com on your tablet and seeing the address for your hotel reservation, while on the cab from the airport.</p>
-  <p>Imagine checking your corporate site from your phone in that one spot in your house where the wi-fi is never good enough (you know the place) and getting a list of your upcoming meetings for the day.</p>
-  <hr />
-  <p>Want proof? Disconnect from the internet and reload this page&hellip; we promise it will blow you away!</p>
-  <hr />
-  <p>The days when you could count on your visitors sitting at their desktops, with a wire connecting them to the internet are long gone. Today, your users are visiting your site from a phone in the elevator, from their tablet on the subway, or on their laptop while they sit cramped into seat 25 E.</p>
-  <p>Luckily, modern browsers support technologies that let you serve your content to your users, even when they are offline.</p>
-  <p>UpUp makes all of this modern magic as simple as calling one command.</p>
-  <pre><code class="javascript">
-&lt;script src="upup.min.js"&gt;&lt;/script&gt;
-&lt;script&gt;
-  UpUp.start({
-    'content-url': 'offline.html' // show this to page to offline users
-  });
-&lt;/script&gt;
-</code></pre>
-  <p>It's time to start the <strong>offline-first</strong> revolution.</p>
+  <header>
+      <img class="img-responsive center-block" src="img/logo.png" alt="upup">
+      <h1 class="center-block">a tiny script that makes sure your site is always there for your users</h1>
+      <h2 class="center-block">(even when they're on a plane over the Atlantic, or 20,000 leagues under the sea)</h2>
+  </header>
+  <div class="show-and-tell">
+    <img class="img-responsive center-block" src="img/show-and-tell.jpg" alt="">
+  </div>
 
-<script src="upup.min.js"></script>
-<script>
-  // Let's turn on debugging messages
-  UpUp.debug();
+  <div class="container">
+    <hr>
+    <div class="row">
+      <p>Your users are no longer sitting at their desktops, with a wire connecting them to the internet.</p>
+      <p>They are visiting your site from a phone in an elevator, from their tablet on the subway, or on their laptop while they sit cramped into seat 25 E.</p>
+      <p>Luckily, modern browsers support technologies that let you serve your content to your users, even when they are offline.</p>
+      <p>UpUp makes using all of this modern magic as simple as calling one command.</p>
+      <pre><code>
+      <span class="html">&lt;script src="<strong>upup.min.js</strong>"&gt;&lt;/script&gt;
+      &lt;script&gt;</span>
+        UpUp.start({
+          '<strong>content-url</strong>': '<strong>offline.html</strong>' <span class="comment">// show this to page to offline users</span>
+        });
+      <span class="html">&lt;/script&gt;</span>
+      </code></pre>
+      <p>UpUp is also powerful enough to support much more complicated use cases.</p>
 
-  // Let's start UpUp with some basic settings
-  UpUp.start({
-    'content-url': 'offline.html',
-    'assets': ['img/porthole.png', 'css/offline.css', 'css/bootstrap.min.css', 'js/offline.js', 'nyt-bestsellers.json']
-  });
-</script>
+      <pre><code>
+      <span class="html">&lt;script src="<strong>upup.min.js</strong>"&gt;&lt;/script&gt;
+      &lt;script&gt;</span>
+        UpUp.start({
+          '<strong>content-url</strong>': '<strong>schedule.html?user=TalAter</strong>', <span class="comment">// show this to the current user when he is offline</span>
+          '<strong>assets</strong>': [ <span class="comment">               // define additional assets needed to display the offline content:</span>
+            '<strong>img/logo.png</strong>', <span class="comment">         // such as images,</span>
+            '<strong>css/offline.css</strong>', <span class="comment">      // custom stylesheets,</span>
+            '<strong>schedule.TalAter.json</strong>', <span class="comment">// personalized data for the current user,</span>
+            '<strong>js/angular.min.js</strong>', <span class="comment">    // javascript libraries,</span>
+            '<strong>contacts.xlsx</strong>' <span class="comment">         // and more.</span>
+          ]
+        });
+      <span class="html">&lt;/script&gt;</span>
+      </code></pre>
 
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+      <h2 class="text-center">It's time to start the <strong>offline-first</strong> revolution.</h2>
+
+    </div>
+  </div>
+
+  <div class="container footer text-center">
+    <hr>
+    <div class="row">
+      <p>&copy; 2015 Tal Ater. All rights reserved. The <a href="https://github.com/TalAter/UpUp">UpUp source code</a> is free to use under the <a href="https://github.com/TalAter/UpUp/blob/master/LICENSE">MIT license</a>.</p>
+      <p>Sunset image used with permission from <a href="https://500px.com/ido_greiman">Ido Greiman</a> - a pretty ok dude.</p>
+    </div>
+  </div>
+
+  <!-- This is our simple implementation of UpUp for this site -->
+  <script src="upup.min.js"></script>
+  <script>
+    // Let's turn on debugging messages
+    UpUp.debug();
+
+    // Let's start UpUp with some basic settings
+    UpUp.start({
+      'content-url': 'offline.html',
+      'assets': ['img/porthole.png', 'css/offline.css', 'css/bootstrap.min.css', 'js/offline.js', 'nyt-bestsellers.json']
+    });
+  </script>
 </body>
 </html>
