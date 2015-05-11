@@ -2,8 +2,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Lonely Globe Advisor</title>
-  <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="lonelyglobe.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/lonelyglobe.css">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <div class="row">
       <div class="col-lg-6 location">
         <div class="panel-body">
-          <img src="hotel_1.jpg" class="img-thumbnail">
+          <img src="img/hotel_1.jpg" class="img-thumbnail">
           <h3>Villa Domus</h3>
           <p class="rating"><span class="badge">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span> 324 reviews</p>
           <p>Via Piacenza 9, Rome, Italy</p>
@@ -22,7 +22,7 @@
       </div>
       <div class="col-lg-6 location">
         <div class="panel-body">
-          <img src="hotel_2.jpg" class="img-thumbnail">
+          <img src="img/hotel_2.jpg" class="img-thumbnail">
           <h3>Hotel Trivelli</h3>
           <p class="rating"><span class="badge">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span> 391 reviews</p>
           <p>Piazza Barberini 11, Rome, Italy</p>
@@ -30,7 +30,7 @@
       </div>
       <div class="col-lg-6 location">
         <div class="panel-body">
-          <img src="hotel_3.jpg" class="img-thumbnail">
+          <img src="img/hotel_3.jpg" class="img-thumbnail">
           <h3>Le Domus del Senato</h3>
           <p class="rating"><span class="badge">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span> 221 reviews</p>
           <p>Via Tor de Conti 22, Rome, Italy</p>
@@ -38,7 +38,7 @@
       </div>
       <div class="col-lg-6 location">
         <div class="panel-body">
-          <img src="hotel_4.jpg" class="img-thumbnail">
+          <img src="img/hotel_4.jpg" class="img-thumbnail">
           <h3>Albergo di San Paolo</h3>
           <p class="rating"><span class="badge">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</span> 198 reviews</p>
           <p>Via delle Alpi 4, Rome, Italy</p>
@@ -46,5 +46,12 @@
       </div>
     </div>
   </div>
+  <script src="upup.min.js"></script>
+  <script>
+    UpUp.start({
+      'content-url': 'offline.html',
+      'assets': ['css/bootstrap.min.css', 'css/offline.css']
+    });
+  </script>
 </body>
 </html>
