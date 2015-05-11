@@ -1,22 +1,22 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>UpUp - Make sure your site never is always there for your users.</title>
+  <title>UpUp - The Offline First Library</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/online.css">
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <header>
-      <img class="img-responsive center-block" src="img/logo.png" alt="upup">
-      <h1 class="center-block">a tiny script that makes sure your site is always there for your users</h1>
-      <h2 class="center-block">(even when they're on a plane over the Atlantic, or 20,000 leagues under the sea)</h2>
+    <img class="img-responsive center-block" src="img/logo.png" alt="upup">
+    <h1 class="center-block">a tiny script that makes sure your site is always there for your users</h1>
+    <h2 class="center-block">(even when they're on a plane over the Atlantic, or 20,000 leagues under the sea)</h2>
   </header>
   <div class="show-and-tell">
     <img class="img-responsive center-block" src="img/show-and-tell.jpg" alt="">
   </div>
 
-  <div class="container">
+  <div class="container narrower">
     <hr>
     <div class="row">
       <p>Your users are no longer sitting at their desktops, with a wire connecting them to the internet.</p>
@@ -27,11 +27,12 @@
       <span class="html">&lt;script src="<strong>upup.min.js</strong>"&gt;&lt;/script&gt;
       &lt;script&gt;</span>
         UpUp.start({
-          '<strong>content-url</strong>': '<strong>offline.html</strong>' <span class="comment">// show this to page to offline users</span>
+          '<strong>content-url</strong>': '<strong>offline.html</strong>' <span class="comment">// show this page to offline users</span>
         });
       <span class="html">&lt;/script&gt;</span>
       </code></pre>
-      <p>UpUp is also powerful enough to support much more complicated use cases.</p>
+
+      <p>UpUp is powerful enough to support much more advanced use cases, even giving an offline experience that includes fully functional single page applications, with data customized to the current user.</p>
 
       <pre><code>
       <span class="html">&lt;script src="<strong>upup.min.js</strong>"&gt;&lt;/script&gt;
@@ -51,10 +52,12 @@
 
       <h2 class="text-center">It's time to start the <strong>offline-first</strong> revolution.</h2>
 
+      <p>To get started, check out the tutorial.</p>
+
     </div>
   </div>
 
-  <div class="container footer text-center">
+  <div class="container footer text-center narrower">
     <hr>
     <div class="row">
       <p>&copy; 2015 Tal Ater. All rights reserved. The <a href="https://github.com/TalAter/UpUp">UpUp source code</a> is free to use under the <a href="https://github.com/TalAter/UpUp/blob/master/LICENSE">MIT license</a>.</p>

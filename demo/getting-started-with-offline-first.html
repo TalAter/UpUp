@@ -1,0 +1,164 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Getting Started with UpUp - The Offline First Library</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/online.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+  <script>
+    $(function() {
+      hljs.initHighlighting();
+    });
+    $(window).on("scroll resize", function(){
+      var postop = $('#phone-demo').offset().top;
+      if (postop > $('#step-4').offset().top) {
+        $(".phone-contents").attr("src", $('#step-4').data('phoneImage'));
+      } else if (postop > $('#step-3').offset().top) {
+        $(".phone-contents").attr("src", $('#step-3').data('phoneImage'));
+      } else if (postop > $('#step-2').offset().top) {
+        $(".phone-contents").attr("src", $('#step-2').data('phoneImage'));
+      } else if (postop > $('#step-1').offset().top-50) {
+        $(".phone-contents").attr("src", $('#step-1').data('phoneImage'));
+      } else if (postop > $('#step-0').offset().top) {
+        $(".phone-contents").attr("src", $('#step-0').data('phoneImage'));
+      } else {
+        $(".phone-contents").attr("src", 'img/phone-dark.png');
+      }
+    });
+  </script>
+</head>
+<body>
+  <header class="shortHeader">
+    <h2 class="center-block">Getting Started with Offline First using</h2>
+    <img class="img-responsive center-block" src="img/logo.png" alt="upup">
+  </header>
+  <div class="container">
+    <div class="row high">
+      <div class="col-md-9">
+        <h3>It's time to start thinking offline-first</h3>
+        <p>Mobile-First has become the de-facto standard for building modern sites. But in a world where everyone is mobile, an always-on connection isn't something we can rely on. It's time to start thinking offline-first.</p>
+        <p>This tutorial will show you how to add offline functionality to your site in under 10 minutes. When you're done, your visitors will no longer be greeted with an error screen when they visit your site with no connection... Instead you'll be able to control the content and experience they get.</p>
+        <h3 id="step-0" data-phone-image="img/phone-lonely-online.png">Let's get started</h3>
+        <p>We'll start with a simple site, and add the offline features to it:</p>
+        <pre><code class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
+    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p id="step-1" data-phone-image="img/phone-lonely-offline.png">Our sample site, Lonely Globe Advisor, offers visitors a list of the top hotels in Rome, with user ratings and an address.</p>
+        <p>But what happens if a our user just landed in Rome and doesn't have a local data plan?</p>
+        <p>Well, he'll be out of luck.</p>
+        <h3>Adding Basic Offline Content</h3>
+        <p>We can control the offline experience with 2 simple steps.</p>
+        <p>First we include the UpUp code in our page. Then we define the content we'd like the user to see when he is offline.</p>
+        <pre id="step-2" data-phone-image="img/phone-lonely-upup-1.png"><code class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
+    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;script src=&quot;upup.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    UpUp.start({
+      &#39;content&#39;: &#39;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;&lt;p&gt;Villa Domus&lt;/p&gt;&lt;p&gt;Hotel Trivelli&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#39;
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>With just a tiny bit of code, we added an offline experience for our site, and allowed our users to see the best hotels in Rome&hellip; even when they can't access the web.</p>
+        <h3>Creating a rich offline experience</h3>
+        <p>While this is already quite impressive, it still doesn't look anything like our online version. Let's improve the offline version with more content, design and images.</p>
+        <p>We'll begin by moving our offline content to a separate file. This will make it much easier to update and maintain, and we'll no longer have to include the entire content of the offline site on every page.</p>
+        <pre><code class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
+    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;script src=&quot;upup.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    UpUp.start({
+      &#39;content-url&#39;: &#39;offline.html&#39;
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>Now the content our users see when they are offline, is the contents of <code>offline.html</code>. This is just a simple HTML file, no different than any other page on our site.</p>
+        <p id="step-3" data-phone-image="img/phone-lonely-upup-2.png">Our <code>offline.html</code> file contains two link tags which load in <code>bootstrap.min.css</code> and a custom <code>offline.css</code>. Let's make sure these are cached and available to the user when they are offline:</p>
+        <pre><code class="html">&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
+    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;script src=&quot;upup.min.js&quot;&gt;&lt;/script&gt;
+  &lt;script&gt;
+    UpUp.start({
+      &#39;content-url&#39;: &#39;offline.html&#39;,
+      &#39;assets&#39;: [&#39;/css/bootstrap.min.css&#39;, &#39;/css/offline.css&#39;]
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <h3>Getting fancy</h3>
+        <p id="step-4" data-phone-image="img/phone-calendar-upup.png">With just one command and two settings, we can create rich offline experiences for our users. These can be as simple as the examples above, or as robust as a full single page application using frameworks like AngularJS, with customized content for each user, videos and even files the user can access while offline.</p>
+<pre><code><span class="html">&lt;script src="<strong>upup.min.js</strong>"&gt;&lt;/script&gt;
+&lt;script&gt;</span>
+  UpUp.start({
+    '<strong>content-url</strong>': '<strong>schedule.html?user=jane007</strong>', <span class="comment">// show this when the user is offline</span>
+    '<strong>assets</strong>': [ <span class="comment">               // define additional assets needed while offline</span>
+      '<strong>img/logo.png</strong>', <span class="comment">         // such as images,</span>
+      '<strong>css/offline.css</strong>', <span class="comment">      // custom stylesheets,</span>
+      '<strong>schedule.jane007.json</strong>', <span class="comment">// personalized data for the current user,</span>
+      '<strong>js/angular.min.js</strong>', <span class="comment">    // javascript libraries and frameworks,</span>
+      '<strong>mov/intro.mp4</strong>', <span class="comment">        // videos,</span>
+      '<strong>contacts.pdf</strong>' <span class="comment">          // and more.</span>
+    ]
+  });
+<span class="html">&lt;/script&gt;</span></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div id="phone-demo">
+    <img src="img/iphone.png">
+    <img class="phone-contents" src="img/phone-dark.png">
+  </div>
+
+  <div class="container footer text-center">
+    <div class="col-md-9">
+      <hr>
+      <div class="row">
+        <p>&copy; 2015 Tal Ater. All rights reserved. The <a href="https://github.com/TalAter/UpUp">UpUp source code</a> is free to use under the <a href="https://github.com/TalAter/UpUp/blob/master/LICENSE">MIT license</a>.</p>
+        <p>Sunset image used with permission from <a href="https://500px.com/ido_greiman">Ido Greiman</a> - a pretty ok dude.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
