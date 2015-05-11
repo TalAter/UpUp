@@ -1,0 +1,19 @@
+div.jumbotron {
+  background: #5A9346;
+  color: #fff;
+}
+.panel-body img {
+  float: left;
+  max-height: auto;
+  margin-right: 20px;
+}
+.location {
+  border-bottom: 1px solid #999;
+}
+p.rating {
+  color: #5A9346;
+  font-weight: bold;
+}
+.badge {
+  background-color: #5A9346;
+}
