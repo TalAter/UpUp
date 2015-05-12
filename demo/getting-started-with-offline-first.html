@@ -82,6 +82,7 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
         <p>With just a tiny bit of code, we added an offline experience for our site, and allowed our users to see the best hotels in Rome&hellip; even when they can't access the web.</p>
+        <p>Make sure to place a copy of both <code>upup.min.js</code> and <code>upup.sw.min.js</code> in the directory that you specified in the script tag. This should idealy be in the root of your site (e.g. https://www.talater.com/upup.min.js).</p>
         <h3>Creating a rich offline experience</h3>
         <p>While this is already quite impressive, it still doesn't look anything like our online version. Let's improve the offline version with more content, design and images.</p>
         <p>We'll begin by moving our offline content to a separate file. This will make it much easier to update and maintain, and we'll no longer have to include the entire content of the offline site on every page.</p>
@@ -142,6 +143,17 @@
     ]
   });
 <span class="html">&lt;/script&gt;</span></code></pre>
+        <h3>Important Considerations and Requirements</h3>
+        <p>There are a number of things to consider when using UpUp. Many of these are requirements of Service Workers, the technology at the heart of UpUp.</p>
+        <h4>Browser Support</h4>
+        <p>UpUp plays nicely with all browsers, progressively enhancing browsers that support Service Workers, while leaving users with older browsers unaffected.</p>
+        <p>Service Workers are specified by the W3C, and currently supported on Chrome 40+, Opera 27+ and are coming soon to Firefox.</p>
+        <h4>HTTPS Only</h4>
+        <p>During development you can use UpUp through localhost or file (e.g. both http://localhost/ and file:///tal/index.html are ok), but to deploy it to production you'll need to have HTTPS setup on your server.</p>
+        <p>This is a requirement for many new web technologies, and SSL certificates go for as little as $5, so don't let that stop you&hellip; progress is coming.</p>
+        <h4>Scope</h4>
+        <p>UpUp can serve offline content for any request within its scope. The scope is determined by where you placed the upup.min.js and upup.sw.min.js files.</p>
+        <p>This means that if you placed the files in your /js/ directory, UpUp will only be able to show your offline content when users try to look at the /js/ directory. This is why you should always place the script as close to the root of your site as possible (e.g. http://www.talater.com/upup.min.js).</p>
       </div>
     </div>
   </div>
