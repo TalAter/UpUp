@@ -49,6 +49,10 @@ p {
 div.show-and-tell {
   margin-top: -75px;
 }
+div.show-and-tell video {
+  width: 824px;
+  height: 528px;
+}
 div.narrower {
   max-width: 850px;
 }

@@ -13,7 +13,7 @@
     <h2 class="center-block">(even when they're on a plane over the Atlantic, or 20,000 leagues under the sea)</h2>
   </header>
   <div class="show-and-tell">
-    <img class="img-responsive center-block" src="img/show-and-tell.jpg" alt="">
+    <video class="img-responsive center-block" onplaying="this.controls=false" src="offline-first-with-upup.mp4"></video>
   </div>
 
   <div class="container narrower">
@@ -52,7 +52,7 @@
 
       <h2 class="text-center">It's time to start the <strong>offline-first</strong> revolution.</h2>
 
-      <p>To get started, check out the tutorial.</p>
+      <p>To get started, check out the <a href="getting-started-with-offline-first.html">tutorial</a>.</p>
 
     </div>
   </div>
@@ -77,5 +77,8 @@
       'assets': ['img/porthole.png', 'css/offline.css', 'css/bootstrap.min.css', 'js/offline.js', 'nyt-bestsellers.json']
     });
   </script>
+
+  <!-- Unrelated sugar to make the page look nice -->
+  <script src="js/online.js"></script>
 </body>
 </html>
