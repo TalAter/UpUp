@@ -24,7 +24,9 @@ same settings object directly to the start() method.
     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
 
 The settings object supports the following options:
-- `content`      (String) The content to display when user is offline.
+- `content-url`  (String) The content to display when user is offline (url to the content that will be served)
+- `content`      (String) The content to display when user is offline (plain text, HTML, etc.)
+- `assets`       (Array)  Array of assets to cache for offline access
 
 # API Reference
 
