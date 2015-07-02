@@ -48,6 +48,7 @@ p {
 }
 div.show-and-tell {
   margin-top: -75px;
+  margin-bottom: 65px;
 }
 div.show-and-tell video {
   width: 824px;
@@ -59,7 +60,20 @@ div.narrower {
 hr {
   margin: 50px 0;
 }
-
+.home-icons-row {
+  margin: 60px 0 30px;
+  font-weight: normal;
+}
+.home-icons-row div img {
+  margin-bottom: 10px;
+}
+.home-icons-row div a {
+  color: #354c6d;
+}
+.home-icons-row div {
+  padding: 0 30px;
+  line-height: normal;
+}
 pre {
   margin: 30px auto 50px;
 }
