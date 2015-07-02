@@ -6,4 +6,4 @@ var scrollAction = function() {
 };
 window.addEventListener('scroll', scrollAction);
 
-vidShowAndTell.addEventListener('ended', function() {vidShowAndTell.play();});
+// vidShowAndTell.addEventListener('ended', function() {vidShowAndTell.play();});
