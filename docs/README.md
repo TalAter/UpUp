@@ -4,7 +4,7 @@
 
 # Quick Start
 
-The quickest way to get started is to visit the [UpUp homepage](https://github.com/TalAter/UpUp).
+The quickest way to get started is to visit the [UpUp homepage](http://UpUp.rocks/).
 
 For a more in-depth look at UpUp, read on.
 
