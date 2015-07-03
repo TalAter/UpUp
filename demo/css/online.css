@@ -92,7 +92,7 @@ code .html {
   color: #777;
 }
 code .comment {
-  color: #aaa;
+  color: #aaa!important;
 }
 .footer {
   margin-bottom: 30px;

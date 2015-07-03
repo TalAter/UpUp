@@ -7,11 +7,7 @@
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/github.min.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
   <script>
-    $(function() {
-      hljs.initHighlighting();
-    });
     $(window).on("scroll resize", function(){
       var postop = $('#phone-demo').offset().top;
       if (postop > $('#step-4').offset().top) {
@@ -43,19 +39,19 @@
         <p>This tutorial will show you how to add offline functionality to your site in under 10 minutes. When you're done, your visitors will no longer be greeted with an error screen when they visit your site with no connection... Instead you'll be able to control the content and experience they get.</p>
         <h3 id="step-0" data-phone-image="img/phone-lonely-online.png">Let's get started</h3>
         <p>We'll start with a simple site, and add the offline features to it:</p>
-        <pre><code class="html">&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
-    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<pre><code class="html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Lonely Globe Advisor<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Top Hotels in Rome<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Villa Domus - Via Piacenza 9, Rome, Italy<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Hotel Trivelli - Piazza Barberini 11, Rome, Italy<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
         <p id="step-1" data-phone-image="img/phone-lonely-offline.png">Our sample site, Lonely Globe Advisor, offers visitors a list of the top hotels in Rome, with user ratings and an address.</p>
         <p>But what happens if our user just landed in Rome and doesn't have a local data plan?</p>
         <p>Well, he'll be out of luck.</p>
@@ -65,88 +61,88 @@
           <li>Include the UpUp script in our page.</li>
           <li>Define the content we'd like the user to see when he is offline.</li>
         </ol>
-        <pre id="step-2" data-phone-image="img/phone-lonely-upup-1.png"><code class="html">&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
-    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;script src=&quot;upup.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script&gt;
+<pre id="step-2" data-phone-image="img/phone-lonely-upup-1.png"><code class="html hljs xml"><span class="comment">&lt;html&gt;</span>
+<span class="comment">&lt;head&gt;</span>
+  <span class="comment">&lt;meta charset="UTF-8"&gt;</span>
+  <span class="comment">&lt;title&gt;Lonely Globe Advisor&lt;/title&gt;</span>
+<span class="comment">&lt;/head&gt;</span>
+<span class="comment">&lt;body&gt;</span>
+  <span class="comment">&lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;</span>
+  <span class="comment">&lt;ol&gt;</span>
+    <span class="comment">&lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;</span>
+    <span class="comment">&lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;</span>
+  <span class="comment">&lt;/<span class="comment">ol</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"upup.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="xml">
     UpUp.start({
-      &#39;content&#39;: &#39;&lt;html&gt;&lt;body&gt;&lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;&lt;p&gt;Villa Domus&lt;/p&gt;&lt;p&gt;Hotel Trivelli&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#39;
+      'content': '<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Top Hotels in Rome<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Villa Domus<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hotel Trivelli<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>'
     });
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="comment">&lt;/body&gt;</span>
+<span class="comment">&lt;/html&gt;</span></code></pre>
         <p>In the code above we simply told UpUp to display some simple HTML the next time a user can't access our site.</p>
         <p>With just this tiny bit of code, we've added an offline experience for our site, and allowed our users to see the best hotels in Rome&hellip; even when they can't access the web.</p>
         <p>Make sure to place a copy of both <code>upup.min.js</code> and <code>upup.sw.min.js</code> in the directory that you specified in the script tag. This should idealy be in the root of your site (e.g. https://www.talater.com/upup.min.js).</p>
         <h3>Creating a rich offline experience</h3>
         <p>While this is already quite impressive, it still doesn't look anything like our online version. Let's improve the offline version with more content, design and images.</p>
         <p>We'll begin by moving our offline content to a separate file. This will make it much easier to update and maintain, and we'll no longer have to include the entire content of the offline site on every page.</p>
-        <pre><code class="html">&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
-    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;script src=&quot;upup.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script&gt;
+<pre><code class="html hljs xml"><span class="comment">&lt;html&gt;</span>
+<span class="comment">&lt;head&gt;</span>
+  <span class="comment">&lt;meta charset="UTF-8"&gt;</span>
+  <span class="comment">&lt;title&gt;Lonely Globe Advisor&lt;/title&gt;</span>
+<span class="comment">&lt;/head&gt;</span>
+<span class="comment">&lt;body&gt;</span>
+  <span class="comment">&lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;</span>
+  <span class="comment">&lt;ol&gt;</span>
+    <span class="comment">&lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;</span>
+    <span class="comment">&lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;</span>
+  <span class="comment">&lt;/<span class="comment">ol</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"upup.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="bash">
     UpUp.start({
-      &#39;content-url&#39;: &#39;offline.html&#39;
+      <span class="hljs-string">'content-url'</span>: <span class="hljs-string">'offline.html'</span>
     });
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="comment">&lt;/body&gt;</span>
+<span class="comment">&lt;/html&gt;</span></code></pre>
         <p>Now the content our users see when they are offline, is the contents of <code>offline.html</code>. This is just a simple HTML file, no different than any other page on our site.</p>
         <p id="step-3" data-phone-image="img/phone-lonely-upup-2.png">Our <code>offline.html</code> file contains two link tags which load in <code>bootstrap.min.css</code> and a custom <code>offline.css</code>. Let's make sure these are cached and available to the user when they are offline:</p>
-        <pre><code class="html">&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;UTF-8&quot;&gt;
-  &lt;title&gt;Lonely Globe Advisor&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;
-    &lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;script src=&quot;upup.min.js&quot;&gt;&lt;/script&gt;
-  &lt;script&gt;
+<pre><code class="html hljs xml"><span class="comment">&lt;html&gt;</span>
+<span class="comment">&lt;head&gt;</span>
+  <span class="comment">&lt;meta charset="UTF-8"&gt;</span>
+  <span class="comment">&lt;title&gt;Lonely Globe Advisor&lt;/title&gt;</span>
+<span class="comment">&lt;/head&gt;</span>
+<span class="comment">&lt;body&gt;</span>
+  <span class="comment">&lt;h1&gt;Top Hotels in Rome&lt;/h1&gt;</span>
+  <span class="comment">&lt;ol&gt;</span>
+    <span class="comment">&lt;li&gt;Villa Domus - Via Piacenza 9, Rome, Italy&lt;/li&gt;</span>
+    <span class="comment">&lt;li&gt;Hotel Trivelli - Piazza Barberini 11, Rome, Italy&lt;/li&gt;</span>
+  <span class="comment">&lt;/<span class="comment">ol</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"upup.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="bash">
     UpUp.start({
-      &#39;content-url&#39;: &#39;offline.html&#39;,
-      &#39;assets&#39;: [&#39;css/bootstrap.min.css&#39;, &#39;css/offline.css&#39;]
+      <span class="hljs-string">'content-url'</span>: <span class="hljs-string">'offline.html'</span>,
+      <span class="hljs-string">'assets'</span>: [<span class="hljs-string">'css/bootstrap.min.css'</span>, <span class="hljs-string">'css/offline.css'</span>]
     });
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+  </span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="comment">&lt;/body&gt;</span>
+<span class="comment">&lt;/html&gt;</span></code></pre>
         <h3>Getting fancy</h3>
         <p id="step-4" data-phone-image="img/phone-calendar-upup.png">With just one command and two settings, we can create rich offline experiences for our users. These can be as simple as the examples above, or as robust as a full single page application using frameworks like AngularJS, with customized content for each user, videos and even files the user can access while offline.</p>
-<pre><code><span class="html">&lt;script src="<strong>upup.min.js</strong>"&gt;&lt;/script&gt;
-&lt;script&gt;</span>
+<pre><code class="hljs xml"><span class="html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"</span></span><strong><span class="hljs-tag"><span class="hljs-value">upup.min.js</span></span></strong><span class="hljs-tag"><span class="hljs-value">"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span></span><span class="cs">
   UpUp.start({
-    '<strong>content-url</strong>': '<strong>schedule.html?user=jane007</strong>', <span class="comment">// show this when the user is offline</span>
-    '<strong>assets</strong>': [ <span class="comment">               // define additional assets needed while offline</span>
-      '<strong>img/logo.png</strong>', <span class="comment">         // such as images,</span>
-      '<strong>css/offline.css</strong>', <span class="comment">      // custom stylesheets,</span>
-      '<strong>schedule.jane007.json</strong>', <span class="comment">// personalized data for the current user,</span>
-      '<strong>js/angular.min.js</strong>', <span class="comment">    // javascript libraries and frameworks,</span>
-      '<strong>mov/intro.mp4</strong>', <span class="comment">        // videos,</span>
-      '<strong>contacts.pdf</strong>' <span class="comment">          // and more.</span>
+    <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">content-url</span></span></strong><span class="cs"><span class="hljs-string">'</span>: <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">schedule.html?user=jane007</span></span></strong><span class="cs"><span class="hljs-string">'</span>, </span><span class="comment"><span class="cs"><span class="comment">// show this when the user is offline</span></span></span><span class="cs">
+    <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">assets</span></span></strong><span class="cs"><span class="hljs-string">'</span>: [ </span><span class="comment"><span class="cs">               <span class="comment">// define additional assets needed while offline</span></span></span><span class="cs">
+      <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">img/logo.png</span></span></strong><span class="cs"><span class="hljs-string">'</span>, </span><span class="comment"><span class="cs">         <span class="comment">// such as images,</span></span></span><span class="cs">
+      <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">css/offline.css</span></span></strong><span class="cs"><span class="hljs-string">'</span>, </span><span class="comment"><span class="cs">      <span class="comment">// custom stylesheets,</span></span></span><span class="cs">
+      <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">schedule.jane007.json</span></span></strong><span class="cs"><span class="hljs-string">'</span>, </span><span class="comment"><span class="cs"><span class="comment">// personalized data for the current user,</span></span></span><span class="cs">
+      <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">js/angular.min.js</span></span></strong><span class="cs"><span class="hljs-string">'</span>, </span><span class="comment"><span class="cs">    <span class="comment">// javascript libraries and frameworks,</span></span></span><span class="cs">
+      <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">mov/intro.mp4</span></span></strong><span class="cs"><span class="hljs-string">'</span>, </span><span class="comment"><span class="cs">        <span class="comment">// videos,</span></span></span><span class="cs">
+      <span class="hljs-string">'</span></span><strong><span class="cs"><span class="hljs-string">contacts.pdf</span></span></strong><span class="cs"><span class="hljs-string">'</span> </span><span class="comment"><span class="cs">          <span class="comment">// and more.</span></span></span><span class="cs">
     ]
   });
-<span class="html">&lt;/script&gt;</span></code></pre>
+</span><span class="html"><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></span></code></pre>
         <h3>Important Considerations and Requirements</h3>
         <p>There are a number of things to consider when using UpUp. Many of these are requirements of Service Workers, the technology at the heart of UpUp.</p>
         <h4>Browser Support</h4>
@@ -172,7 +168,7 @@
       <hr>
       <div class="row">
         <p>&copy; 2015 Tal Ater. All rights reserved. The <a href="https://github.com/TalAter/UpUp">UpUp source code</a> is free to use under the <a href="https://github.com/TalAter/UpUp/blob/master/LICENSE">MIT license</a>.</p>
-        <p>Sunset image used with permission from <a href="https://500px.com/ido_greiman">Ido Greiman</a> - a pretty ok dude.</p>
+        <p>Sunset image used with permission from <a href="https://500px.com/ido_greiman">Ido Greiman</a>.</p>
       </div>
     </div>
   </div>
