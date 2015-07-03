@@ -43,7 +43,7 @@ h3 {
   margin-bottom: 15px;
   margin-top: 70px;
 }
-p {
+p,li {
   font-size: 22px
 }
 div.show-and-tell {
