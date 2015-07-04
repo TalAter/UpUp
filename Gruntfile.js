@@ -46,6 +46,16 @@ module.exports = function(grunt) {
           {src: 'src/upup.js', dest: 'docs/README.md'}
         ]
       }
+    },
+    compress: {
+      main: {
+        options: {
+          archive: 'dist/upup.zip'
+        },
+        files: [
+          {expand: true, cwd: 'dist', src: ['*.js']}
+        ]
+      }
     }
   });
 
@@ -55,9 +65,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-markdox');
+  grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'markdox', 'compress']);
 
   grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
