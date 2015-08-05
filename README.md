@@ -1,4 +1,4 @@
-<a href="https://www.talater.com/upup"><img align="right" src="https://www.talater.com/upup/img/upup-readme.gif" border="0"></a>
+<a href="https://www.talater.com/upup"><img align="right" src="demo/img/upup-readme.gif" alt="Offline-First with UpUp"></a>
 ### UpUp
 
 #### Make sure your site is always up
