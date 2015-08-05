@@ -10,10 +10,6 @@ Demo & Tutorial
 ---------------
 [Play with some live demos](https://www.talater.com/upup)
 
-Technical Documentation and API
--------------------------------
-[Docs and full API reference](https://github.com/TalAter/UpUp/blob/master/docs/README.md)
-
 Hello World
 -----------
 It's as easy as adding two javascript files to your site, [upup.min.js](https://raw.githubusercontent.com/TalAter/UpUp/master/dist/upup.min.js) & [upup.sw.min.js](https://raw.githubusercontent.com/TalAter/UpUp/master/dist/upup.sw.min.js), and defining the content you want your users to see when they are offline.
@@ -36,6 +32,10 @@ UpUp requires a secure connection to your site (this is a requirement of Service
 Browser Support
 ---------------
 UpUp works in any browser that supports ServiceWorkers - [Is ServiceWorker ready?](https://jakearchibald.github.io/isserviceworkerready/)
+
+Technical Documentation and API
+-------------------------------
+[Docs and full API reference](https://github.com/TalAter/UpUp/blob/master/docs/README.md)
 
 UpUp is currently under heavy construction!
 -------------------------------------------
