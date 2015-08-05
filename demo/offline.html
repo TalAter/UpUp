@@ -1,45 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sample offline content</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/offline.css">
-  </head>
-  <body>
-    <div class="container" id="top-container">
-      <div class="row text-center">
-        <div class="col-lg-12">
-          <h1>Looks like you’re somewhere<br />without an internet connection.</h1>
-        </div>
-      </div>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>UpUp - The Offline First Library</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/offline.css">
+</head>
+<body>
+  <header class="shortHeader">
+    <img class="img-responsive center-block" src="img/logo.png" alt="upup">
+    <h1 class="center-block">Looks like you’re somewhere without an internet connection.</h1>
+  </header>
+  <div class="show-and-tell">
+    <img src="img/mb-offline.png">
+  </div>
+
+  <div class="container narrower">
+    <div class="row">
+      <p>Lucky for you, UpUp is serving you content even when you are on a plane flying over the pacific, or 20,000 leagues under the sea.</p>
+      <p>To add the functionality you’re seeing now, we simply added a small piece of code to our site:</p>
+      <pre><code>
+      <span class="html">&lt;script src="<strong>upup.min.js</strong>"&gt;&lt;/script&gt;
+      &lt;script&gt;</span>
+        UpUp.start({
+          '<strong>content-url</strong>': '<strong>offline.html</strong>', <span class="comment">// show this page to offline users</span>
+          '<strong>assets</strong>': <span class="comment">// Save the following files to cache as well</span>
+            ['<strong>css/offline.css</strong>', '<strong>css/bootstrap.min.css</strong>', '<strong>img/mb-offline.png</strong>', '<strong>img/logo.png</strong>', '<strong>img/sunset.jpg</strong>']
+        });
+      <span class="html">&lt;/script&gt;</span>
+      </code></pre>
+      <h2 class="text-center">It's time to start the <strong>offline-first</strong> revolution.</h2>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2">
-        </div>
-        <div class="col-sm-4" id="about-upup">
-          <h2>Lucky for you, UpUp serves content even when your users are on a plane flying over the pacific, or 20,000 leagues under the sea.</h2>
-          <h2>Want proof?</h2>
-        </div>
-        <div class="col-sm-4">
-          <h3>Here's the current New York Times bestsellers list:</h3>
-          <ol id="bestsellers">
-          </ol>
-        </div>
-        <div class="col-sm-2">
-        </div>
-      </div>
+  </div>
+
+  <div class="container footer text-center narrower">
+    <hr>
+    <div class="row">
+      <p>&copy; 2015 Tal Ater. All rights reserved. The <a href="https://github.com/TalAter/UpUp">UpUp source code</a> is free to use under the <a href="https://github.com/TalAter/UpUp/blob/master/LICENSE">MIT license</a>.</p>
+      <p>Sunset image used with permission from <a href="https://500px.com/ido_greiman">Ido Greiman</a>.</p>
     </div>
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-lg-12">
-          <h2>Visit <a href="http://upup.rocks/">http://upup.rocks</a> to find out how you can add this to your site.</h2>
-        </div>
-      </div>
-    </div>
-    <script src="js/offline.js"></script>
-  </body>
+  </div>
+</body>
 </html>
