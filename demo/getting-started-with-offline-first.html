@@ -172,5 +172,17 @@
       </div>
     </div>
   </div>
+  <!-- This is our simple implementation of UpUp for this site -->
+  <script src="upup.min.js"></script>
+  <script>
+    // Let's turn on debugging messages
+    UpUp.debug();
+
+    // Let's start UpUp with some basic settings
+    UpUp.start({
+      'content-url': 'offline.html',
+      'assets': ['css/offline.css', 'css/bootstrap.min.css', 'img/mb-offline.png', 'img/logo.png', 'img/sunset.jpg']
+    });
+  </script>
 </body>
 </html>
