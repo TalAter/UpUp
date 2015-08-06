@@ -46,8 +46,8 @@
 
   // Check browser support
   // This is done as early as possible, to make it as fast as possible for unsupported browsers
-  // Requires ServiceWorker and IndexedDB
-  if (!_serviceWorker || !_root.indexedDB) {
+  // Requires ServiceWorker
+  if (!_serviceWorker) {
     _root.UpUp = null;
     return undefined;
   }
