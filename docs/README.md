@@ -14,9 +14,9 @@ Once you're ready for a more in-depth look at the UpUp API, read on.
 
 ## ServiceWorker
 
-ServiceWorkers are at the heart of UpUp.
+At the heart of UpUp are ServiceWorkers. ServiceWorkers are a new web technology, which allows developers to take control and shape user's requests to their server.
 
-While UpUp abstracts much of the complexity and browsers compatibility issues, there are a few things to be aware of.
+While UpUp abstracts much of ServiceWorkers' complexity, browser compatibility issues and flattens the learning curve, there are a few things to be aware of.
 
 ### HTTPS only
 
