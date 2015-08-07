@@ -5,7 +5,7 @@ UpUp is a tiny javascript library that makes sure your users can always access y
 
 Mobile-First has become the de-facto standard for building modern sites. But in a world where everyone is mobile, an always-on connection isn't something we can rely on. It's time to start thinking **Offline-First**.
 
-With UpuUp you control the content your users see, even when they are offline. And you can do it with just a single line of code.
+With UpuUp you control the content your users see, even when they are offline. And you can do it with just a single JavaScript command.
 
 ### Demo & Tutorial
 The easiest path to understanding, is to see [UpUp in action, and try a quick tutorial](https://www.talater.com/upup).
