@@ -28,7 +28,7 @@ Now every time your users return to your site and their connection is down, they
 **Check out some [live demos and a full tutorial](https://www.talater.com/upup/). Once you're up and rolling, you can read the full [API Docs](https://github.com/TalAter/UpUp/blob/master/docs/README.md).**
 
 ### HTTPS Requirement
-UpUp requires a secure connection to your site (this is a requirement of ServiceWorkers). So make sure your users visit your site over HTTPS (an SSL certificate can be as cheap as $5).
+UpUp requires a secure connection to your site (this is a requirement of ServiceWorkers, the technology at the heart of UpUp). So make sure your users visit your site over HTTPS (an SSL certificate can be as cheap as $5).
 
 ### Browser Support
 UpUp works in any browser that supports ServiceWorkers. Currently this means:
