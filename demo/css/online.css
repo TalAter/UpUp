@@ -30,11 +30,12 @@ h1, h2 {
   max-width: 850px;
 }
 h1 {
-  margin-top: 100px;
+  margin-top: 60px;
   font-size: 60px
 }
 h2 {
-  font-size: 24px
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 h3 {
   width: 100%;
@@ -61,7 +62,7 @@ hr {
   margin: 50px 0;
 }
 .home-icons-row {
-  margin: 60px 0 30px;
+  margin: 30px 0 60px;
   font-weight: normal;
 }
 .home-icons-row div img {

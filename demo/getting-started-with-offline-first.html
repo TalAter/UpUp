@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Getting Started with Offline First using UpUp Tutorial</title>
-  <meta name="description" content="A quick tutorial on building Offline-First sites, and making your existing sites offline-ready." />
+  <meta name="description" content="A quick tutorial on building Offline First sites, and making your existing sites offline-ready." />
   <meta property="og:image" content="https://www.talater.com/upup/img/upup_logo.jpg"/>
-  <meta property="og:title" content="UpUp - Kickstart the Offline-First Revolution"/>
-  <meta property="og:description" content="Control how users see your site (even when they're on a plane over the Atlantic, or 20,000 leagues under the sea)"/>
+  <meta property="og:title" content="UpUp - Offline First in 1 line of Javascript"/>
+  <meta property="og:description" content="Let your users experience your site, even when they're on a plane over the Atlantic, or 20,000 leagues under the sea. #OfflineFirst"/>
   <meta property="og:url" content="https://www.talater.com/upup/"/>
   <meta property="og:site_name" content="UpUp"/>
   <meta property="fb:admins" content="568390229" />
@@ -43,8 +43,8 @@
   <div class="container">
     <div class="row high">
       <div class="col-md-9">
-        <h3>It's time to start thinking offline-first</h3>
-        <p>Mobile-First has become the de-facto standard for building modern sites. But in a world where everyone is mobile, an always-on connection isn't something we can rely on. It's time to start thinking offline-first.</p>
+        <h3>It's time to start thinking offline first</h3>
+        <p>Mobile First has become the de-facto standard for building modern sites. But in a world where everyone is mobile, an always-on connection isn't something we can rely on. It's time to start thinking Offline First.</p>
         <p>This tutorial will show you how to add offline functionality to your site in under 10 minutes. When you're done, your visitors will no longer be greeted with an error screen when they visit your site with no connection... Instead you'll be able to control the content and experience they get.</p>
         <h3 id="step-0" data-phone-image="img/phone-lonely-online.png">Let's get started</h3>
         <p>We'll start with a simple site, and add the offline features to it:</p>
@@ -164,10 +164,36 @@
         <h4>Scope</h4>
         <p>UpUp can only serve offline content for requests within its scope. The scope is determined by where you placed the upup.min.js and upup.sw.min.js files.</p>
         <p>This means that if you placed the files in your /js/ directory, UpUp will only be able to show your offline content when users try to look at the /js/ directory. This is why you should always place the script as close to the root of your site as possible (e.g. https://www.talater.com/upup.min.js).</p>
+
+        <h3>What's next?</h3>
+
         <div class="row home-icons-row">
           <div class="col-sm-2 col-sm-offset-1 text-center"><a href="https://github.com/TalAter/UpUp/raw/master/dist/upup.zip"><img src="img/icon-download.png" alt="Download UpUp Files" class="img-responsive center-block" />Download UpUp</a></div>
           <div class="col-sm-2 col-sm-offset-2 text-center"><a href="https://github.com/TalAter/UpUp/blob/master/docs/README.md"><img src="img/icon-docs.png" alt="UpUp Documentation" class="img-responsive center-block" />Explore Docs</a></div>
           <div class="col-sm-2 col-sm-offset-2 text-center"><a href="https://github.com/TalAter/UpUp/"><img src="img/icon-source.png" alt="UpUp Source Code" class="img-responsive center-block" />Browse Source</a></div>
+        </div>
+
+        <h2 class="text-center">Please help spread the Offline First message:</h2>
+
+        <div class="row home-icons-row">
+          <div class="col-sm-4 text-center">
+            <iframe src="https://ghbtns.com/github-btn.html?user=TalAter&repo=UpUp&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+          </div>
+          <div class="col-sm-4 text-center">
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://www.talater.com/upup/" data-text="Control how users see your site…even when theyre flying over the Atlantic or 20k leagues under the sea" data-size="large" data-hashtags="OfflineFirst">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+          </div>
+          <div class="col-sm-4 text-center">
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-like" data-href="https://www.talater.com/upup/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+          </div>
         </div>
       </div>
     </div>
