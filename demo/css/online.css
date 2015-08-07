@@ -116,3 +116,12 @@ code .comment {
   top: 14.5%;
   padding: 0 8.9%;
 }
+@media (max-height: 650px) {
+  header {
+    padding: 20px auto;
+  }
+  h1 {
+    margin-top: 10px;
+    font-size: 50px
+  }
+}

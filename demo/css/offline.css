@@ -67,3 +67,12 @@ code .comment {
   font-size: 11px;
   margin: 0 0;
 }
+@media (max-height: 740px) {
+  header {
+    padding: 20px 0;
+  }
+  h1 {
+    margin-top: 10px;
+    font-size: 50px
+  }
+}
