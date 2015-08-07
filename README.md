@@ -28,13 +28,15 @@ UpUp.start({
 UpUp requires a secure connection to your site (this is a requirement of ServiceWorkers). So make sure your users visit your site over HTTPS (an SSL certificate can be as cheap as $5).
 
 ### Browser Support
-UpUp works in any browser that supports ServiceWorkers - [Is ServiceWorker ready?](https://jakearchibald.github.io/isserviceworkerready/)
+UpUp works in any browser that supports ServiceWorkers. Currently this means:
+* Chrome 40+
+* Opera 27+
+* Firefox 41+
+
+If your users are using a different or older browser, they will simply be unaffected by UpUp. Nothing will break, and they simply won't notice anything different.
 
 ### Technical Documentation and API
 [Docs and full API reference](https://github.com/TalAter/UpUp/blob/master/docs/README.md)
-
-### UpUp is currently under heavy construction!
-Feel free to **Star** and **Watch** it, but watch out for falling debris, and a wildly changing API.
 
 ### Author
 Tal Ater: [@TalAter](https://twitter.com/TalAter)
