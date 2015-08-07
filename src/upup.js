@@ -20,7 +20,7 @@
    *
    * ## ServiceWorker
    *
-   * At the heart of UpUp are ServiceWorkers. ServiceWorkers are a new web technology, which allows developers to take control and shape user's requests to their server.
+   * At the heart of UpUp are ServiceWorkers - a new web technology, which allows developers to take control and shape user's requests to their server.
    *
    * While UpUp abstracts much of ServiceWorkers' complexity, browser compatibility issues and flattens the learning curve, there are a few things to be aware of.
    *
@@ -31,9 +31,11 @@
    * During development you can also use UpUp through localhost or file (e.g. both http://localhost/ and file:///Users/tal/index.html are ok)
    *
    * ### Scope
-   * UpUp can serve offline content for any request within its scope. The scope is determined by where you placed the `upup.min.js` and `upup.sw.min.js` files.
+   * UpUp can only serve offline content for requests within its scope. The scope is determined by where you placed the `upup.min.js` and `upup.sw.min.js` files.
    *
-   * This means that if you placed the files in your /js/ directory, UpUp will only be able to show your offline content when users try to look at the /js/ directory. This is why you should always place the script as close to the root of your site as possible (e.g. https://www.talater.com/upup.min.js).
+   * This means that if you placed the files in your `/js/` directory, UpUp will only be able to show your offline content when users try to look inside the `/js/` directory.
+   *
+   * **This is why you should always place the script as close to the root of your site as possible (e.g. https://www.talater.com/upup.min.js).**
    *
    * ## Settings
    *
@@ -154,7 +156,8 @@
 
     /**
      * Turn on or off the output of debug messages to the console.
-     * Don't pass any parameters to turn on, or pass a boolean to control debug state.
+     * Don't pass any parameters to turn on, or pass a boolean to explicitly set
+     * debug state on or off.
      *
      * @param {Boolean} [newState=true] - Turn on/off debug messages
      * @method debug

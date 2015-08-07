@@ -153,7 +153,7 @@
         <p>During development you can use UpUp through localhost or file (e.g. both http://localhost/ and file:///Users/tal/index.html are ok), but to deploy it to production you'll need to have HTTPS setup on your server.</p>
         <p>This is a requirement for many new web technologies, and SSL certificates go for as little as $5, so don't let that stop you&hellip; progress is coming.</p>
         <h4>Scope</h4>
-        <p>UpUp can serve offline content for any request within its scope. The scope is determined by where you placed the upup.min.js and upup.sw.min.js files.</p>
+        <p>UpUp can only serve offline content for requests within its scope. The scope is determined by where you placed the upup.min.js and upup.sw.min.js files.</p>
         <p>This means that if you placed the files in your /js/ directory, UpUp will only be able to show your offline content when users try to look at the /js/ directory. This is why you should always place the script as close to the root of your site as possible (e.g. https://www.talater.com/upup.min.js).</p>
         <div class="row home-icons-row">
           <div class="col-sm-2 col-sm-offset-1 text-center"><a href="https://github.com/TalAter/UpUp/raw/master/dist/upup.zip"><img src="img/icon-download.png" alt="Download UpUp Files" class="img-responsive center-block" />Download UpUp</a></div>
