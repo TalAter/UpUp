@@ -114,6 +114,7 @@ code .comment {
   position: absolute;
   z-index: -1;
   top: 14.5%;
+  left: 0;
   padding: 0 8.9%;
 }
 @media (max-height: 650px) {
