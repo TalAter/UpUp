@@ -24,7 +24,7 @@ self.addEventListener('message', function(event) {
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     // try to return untouched request from network first
-    fetch(event.request.url).catch(function() {
+    fetch(event.request.url, { mode: 'no-cors' }).catch(function() {
       // try to return request from cache second
       return caches.match(event.request).then(function(response) {
         // return offline content last
@@ -44,7 +44,7 @@ var _setSettings = function(settings) {
     }
     // store offline content from external url
     if (settings['content-url']) {
-      return fetch(settings['content-url']).then(function(response) {
+      return fetch(settings['content-url'], { mode: 'no-cors' }).then(function(response) {
         return cache.put('sw-offline-content', response);
       });
     // store plain content
