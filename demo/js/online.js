@@ -5,5 +5,3 @@ var scrollAction = function() {
   vidShowAndTell.play();
 };
 window.addEventListener('scroll', scrollAction);
-
-// vidShowAndTell.addEventListener('ended', function() {vidShowAndTell.play();});
