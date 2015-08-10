@@ -47,6 +47,9 @@ h3 {
 p,li {
   font-size: 22px
 }
+p {
+  margin-bottom: 22px;
+}
 div.show-and-tell {
   margin-top: -75px;
   margin-bottom: 65px;
