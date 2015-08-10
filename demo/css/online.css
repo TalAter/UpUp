@@ -70,6 +70,7 @@ hr {
 }
 .home-icons-row div a {
   color: #354c6d;
+  font-weight: bold;
 }
 .home-icons-row div {
   padding: 0 30px;
