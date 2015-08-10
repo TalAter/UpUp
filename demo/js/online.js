@@ -5,3 +5,8 @@ var scrollAction = function() {
   vidShowAndTell.play();
 };
 window.addEventListener('scroll', scrollAction);
+
+// ugh... mobile hack... forgive me.
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  vidShowAndTell.poster = "img/upup-poster-play.jpg"
+}
