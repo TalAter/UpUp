@@ -122,6 +122,36 @@ code .comment {
   left: 0;
   padding: 0 8.9%;
 }
+div.callout-1 {
+  border-left: 10px solid #c3267d;
+}
+div.callout-2 {
+  border-left: 10px solid #267dc3;
+}
+div.callout-3 {
+  border-left: 10px solid #a2c63e;
+}
+div.callout-4 {
+  border-left: 10px solid #298377;
+}
+div.callout {
+  background-color: #f5f5f5;
+  -webkit-box-shadow: 0px 0px 0px 1px rgba(235,235,235,1);
+  -moz-box-shadow: 0px 0px 0px 1px rgba(235,235,235,1);
+  box-shadow: 0px 0px 0px 1px rgba(235,235,235,1);
+  padding: 18px 28px 6px 28px;
+  margin-bottom: 22px;
+  text-align: justify;
+}
+div.callout h4 {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #e6e6e6;
+  line-height: 30px;
+}
+div.callout p {
+  font-size: 18px;
+}
 @media (max-height: 650px) {
   header {
     padding: 20px auto;
