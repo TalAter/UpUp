@@ -65,19 +65,17 @@ hr {
   margin: 50px 0;
 }
 .home-icons-row {
-  margin: 30px 0 60px;
-  font-weight: normal;
-}
-.home-icons-row div img {
   margin-bottom: 10px;
 }
-.home-icons-row div a {
-  color: #354c6d;
+.home-icons-row img {
+  width: 38%;
+  margin-right: 15px;
+}
+.home-icons-row a {
   font-weight: bold;
 }
-.home-icons-row div {
-  padding: 0 30px;
-  line-height: normal;
+.home-icons-row div.callout {
+  padding: 18px 20px 18px 20px!important;
 }
 pre {
   margin: 30px auto 50px;
@@ -143,7 +141,7 @@ div.callout {
   margin-bottom: 22px;
   text-align: justify;
 }
-div.callout h4 {
+h4 {
   font-size: 18px;
   font-weight: bold;
   border-bottom: 1px solid #e6e6e6;
