@@ -150,6 +150,12 @@ h4 {
 div.callout p {
   font-size: 18px;
 }
+@media (max-width: 1000px) {
+  .home-icons-row img {
+    width: 20%;
+    margin-right: 10px;
+  }
+}
 @media (max-height: 650px) {
   header {
     padding: 20px auto;
