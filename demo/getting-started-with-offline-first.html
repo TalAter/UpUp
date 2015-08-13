@@ -92,10 +92,10 @@
         <p>In the code above we simply told UpUp to display some simple HTML the next time a user can't access our site.</p>
         <p>With just this tiny bit of code, we've added an offline experience for our site, and allowed our users to see the best hotels in Rome&hellip; even when they can't access the web.</p>
         <div class="callout callout-1">
-          <h4>Where Should I Place My Files?</h4>
-          <p>UpUp relies on ServiceWorkers to detect when a network request fails. For security reasons, the browser only lets a ServiceWorker see network requests within its scope.</p>
-          <p>The scope that the ServiceWorker can touch is determined by where you placed <code>upup.min.js</code> and <code>upup.sw.min.js</code>. For example, if you place it on <code>https://yoursite.com/js/upup.sw.min.js</code>, UpUp will only be able to show your offline content when users try to look at the <code>/js/</code> directory.</p>
-          <p>This is why it is important to place both files on the same server as your content, and not in a subdirectory. This should idealy be in the root of your site (e.g. https://yoursite.com/upup.min.js).</p>
+          <h4>How Does It Work?</h4>
+          <p>UpUp uses ServiceWorkers to determine when network requests fail. A ServiceWorker is a special script that runs in the browser in the background, and can see the status of network requests.</p>
+          <p>When the user first visits your site, UpUp registers a ServiceWorker with your browser, and gives it a list of files to cache for later.</p>
+          <p>The next time the user visits your site, the ServiceWorker listens for network errors. If a network request fails, and the ServiceWorker finds that file in the cache, it will return that file, as if it came from the network.</p>
         </div>
         <h3>Creating a rich offline experience</h3>
         <p>While this is already quite impressive, it still doesn't look anything like our online version. Let's improve the offline version with more content, design and images.</p>
@@ -120,7 +120,7 @@
 <span class="comment">&lt;/body&gt;</span>
 <span class="comment">&lt;/html&gt;</span></code></pre>
         <p>Now the content our users see when they are offline, is the contents of <code>offline.html</code>. This is just a simple HTML file, no different than any other page on our site.</p>
-        <p id="step-3" data-phone-image="img/phone-lonely-upup-2.png">Our <code>offline.html</code> file contains two link tags which load in <code>bootstrap.min.css</code> and a custom <code>offline.css</code>. Let's make sure these are cached and available to the user when they are offline:</p>
+        <p id="step-3" data-phone-image="img/phone-lonely-upup-2.png">Our <code>offline.html</code> file contains two link tags which load <code>bootstrap.min.css</code> and <code>offline.css</code>. Let's make sure these are cached and available to our users when they are offline:</p>
 <pre><code class="html hljs xml"><span class="comment">&lt;html&gt;</span>
 <span class="comment">&lt;head&gt;</span>
   <span class="comment">&lt;meta charset="UTF-8"&gt;</span>
@@ -143,10 +143,10 @@
 <span class="comment">&lt;/html&gt;</span></code></pre>
 
         <div class="callout callout-2">
-          <h4>How Does It Work?</h4>
-          <p>UpUp uses ServiceWorkers to determine when network requests fail. A ServiceWorker is a special script that runs in the browser in the background, and can see the status of network requests.</p>
-          <p>When the user first visits your site, UpUp registers a ServiceWorker with your browser, and gives it a list of files to cache for later.</p>
-          <p>The next time the user visits your site, the ServiceWorker listens for network errors. If a network request fails, and the ServiceWorker finds that file in the cache, it will return that file, as if it came from the network.</p>
+          <h4>Where Should I Place My Files?</h4>
+          <p>For security reasons, the browser only lets UpUp's ServiceWorker see network requests within its scope.</p>
+          <p>The scope that the ServiceWorker can affect is determined by where you placed <code>upup.min.js</code> and <code>upup.sw.min.js</code>. For example, if you place it on <code>https://yoursite.com/js/upup.sw.min.js</code>, UpUp will only be able to show your offline content when users try to look at the <code>/js/</code> directory.</p>
+          <p>This is why it is important to place both files on the same server as your content, and not in a subdirectory. This should idealy be in the root of your site (e.g. https://yoursite.com/upup.min.js).</p>
         </div>
 
         <h3>Getting fancy</h3>
