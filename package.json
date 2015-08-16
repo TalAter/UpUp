@@ -1,6 +1,6 @@
 {
   "name": "UpUp",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Make sure your site never goes… !up.",
   "main": "index.js",
   "scripts": {
