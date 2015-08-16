@@ -38,8 +38,8 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      files: ['src/**', 'demo/**', '!**/node_modules/**'],
       tasks: ['default'],
+      files: ['src/**', 'demo/css/online.css', '!**/node_modules/**'],
     },
     connect: {
       server: {
