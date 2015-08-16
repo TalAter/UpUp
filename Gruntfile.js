@@ -38,8 +38,8 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      tasks: ['default'],
       files: ['src/**', 'demo/css/online.css', '!**/node_modules/**'],
+      tasks: ['devwatcher'],
     },
     connect: {
       server: {
@@ -90,6 +90,8 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['jshint', 'uglify', 'markdox', 'imagemin', 'cssmin', 'compress']);
+
+  grunt.registerTask('devwatcher', ['jshint', 'uglify', 'cssmin']);
 
   grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
