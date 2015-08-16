@@ -38,7 +38,7 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      files: ['src/*', '!**/node_modules/**'],
+      files: ['src/**', 'demo/**', '!**/node_modules/**'],
       tasks: ['default'],
     },
     connect: {
@@ -49,6 +49,13 @@ module.exports = function(grunt) {
           hostname: '*',
           base: '.',
           open: 'http://localhost:8443/demo'
+        }
+      }
+    },
+    cssmin: {
+      combine: {
+        files: {
+          'demo/css/online.min.css': ['demo/css/online.css']
         }
       }
     },
@@ -79,9 +86,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-markdox');
   grunt.loadNpmTasks('grunt-contrib-compress');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'uglify', 'markdox', 'imagemin', 'compress']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'markdox', 'imagemin', 'cssmin', 'compress']);
 
   grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
