@@ -25,6 +25,18 @@ module.exports = function(grunt) {
         }
       }
     },
+    imagemin: {
+      demoimages: {                       // Target
+        options: {                        // Target options
+        },
+        files: [{
+          expand: true,                   // Enable dynamic expansion
+          cwd: 'demo/img',                // Src matches are relative to this path
+          src: ['*.{png,jpg,gif}'],       // Actual patterns to match
+          dest: 'demo/img'                // Destination path prefix
+        }]
+      },
+    },
     watch: {
       files: ['src/*', '!**/node_modules/**'],
       tasks: ['default'],
@@ -63,12 +75,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-markdox');
   grunt.loadNpmTasks('grunt-contrib-compress');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'uglify', 'markdox', 'compress']);
+  grunt.registerTask('default', ['jshint', 'uglify', 'markdox', 'imagemin', 'compress']);
 
   grunt.registerTask('dev', ['default', 'connect', 'watch']);
 
