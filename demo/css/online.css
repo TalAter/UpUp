@@ -159,6 +159,27 @@ div.callout p {
     width: 20%;
     margin-right: 10px;
   }
+  h1 {
+    font-size: 45px;
+  }
+  div.show-and-tell {
+    margin-top: -145px;
+    margin-bottom: 0;
+  }
+  .row {
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
+  div.callout {
+    padding: 8px 17px 1px 17px!important;
+  }
+  li, p {
+    font-size: 16px;
+  }
+  header {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 @media (max-height: 650px) {
   header {
