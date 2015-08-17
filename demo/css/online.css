@@ -154,6 +154,12 @@ h4 {
 div.callout p {
   font-size: 18px;
 }
+.nav {
+  margin-bottom: 20px;
+}
+.nav li {
+  font-size: 14px!important;
+}
 @media (max-width: 1000px) {
   .home-icons-row img {
     width: 20%;
