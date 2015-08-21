@@ -9,7 +9,7 @@ body {
 }
 header {
   text-align: center;
-  background: url('../img/sunset.jpg') no-repeat center center fixed;
+  background: #323f53 url('../img/sunset.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -17,6 +17,10 @@ header {
   padding: 75px 0;
   height: 60%;
   color: #fff;
+}
+header img {
+  width: 135px;
+  height: 50px;
 }
 h1, h2 {
   font-weight: 300;
