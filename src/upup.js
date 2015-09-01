@@ -148,9 +148,14 @@
         settings = {'content': settings};
       }
 
+      // default settings
+      var defaultSettings = {
+        'content-url': _root.location ? _root.location.href : null // get the current window location url
+      };
+
       // add new settings to our settings object
       ['content', 'content-url', 'assets'].forEach(function(settingName) {
-        _settings[settingName] = settings[settingName] || null;
+        _settings[settingName] = settings[settingName] || (defaultSettings[settingName] || null);
       });
     },
 
