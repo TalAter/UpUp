@@ -112,12 +112,13 @@
 
         // Send the settings to the ServiceWorker
         var messenger = registration.installing || _serviceWorker.controller;
-        messenger.postMessage({'action': 'set-settings', 'settings': _settings});
-
+        if (messenger) {
+          messenger.postMessage({'action': 'set-settings', 'settings': _settings});
+        }
       }).catch(function(err) {
         // registration failed :(
         if (_debugState) {
-          console.log('ServiceWorker registration failed: %c'+err, _debugStyle);
+          console.error('ServiceWorker registration failed: %c'+err, _debugStyle);
         }
       });
     },
@@ -148,10 +149,18 @@
         settings = {'content': settings};
       }
 
+      // default settings
+      var defaultSettings = {
+        'content-url': _root.location ? _root.location.href : null, // get the current window location url
+        'cache-ttl': 60 * 60 * 24 // 1 day default TTL
+      };
+
       // add new settings to our settings object
-      ['content', 'content-url', 'assets'].forEach(function(settingName) {
-        _settings[settingName] = settings[settingName] || null;
+      ['content', 'content-url', 'assets', 'cache-ttl'].forEach(function(settingName) {
+        _settings[settingName] = settings[settingName] || (defaultSettings[settingName] || null);
       });
+
+      _settings['cache-ttl'] = parseInt(_settings['cache-ttl'], 10);
     },
 
     /**
