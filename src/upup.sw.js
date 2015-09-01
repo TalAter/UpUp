@@ -12,11 +12,18 @@
 // Name of our cache
 var _CACHE_NAME = 'upup-cache';
 
+var lastCacheRefresh = null; // cache TTL
+
 // Register message event listener
 self.addEventListener('message', function(event) {
   // place offline message in cache
   if (event.data.action === 'set-settings') {
-    _setSettings(event.data.settings)
+    // already in cache and TTL is not expired
+    if (lastCacheRefresh && (new Date().getTime() - lastCacheRefresh) <= settings['cache-ttl']) {
+      return;
+    }
+    lastCacheRefresh = new Date().getTime();
+    _setSettings(event.data.settings);
   }
 });
 
