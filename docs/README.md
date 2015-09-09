@@ -45,9 +45,10 @@ same settings object directly to the start() method.
     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
 
 The settings object supports the following options:
-- `content-url`  (String) The content to display when user is offline (url to the content that will be served)
-- `content`      (String) The content to display when user is offline (plain text, HTML, etc.)
-- `assets`       (Array)  Array of assets to cache for offline access
+- `content-url`         (String) The content to display when user is offline (url to the content that will be served)
+- `content`             (String) The content to display when user is offline (plain text, HTML, etc.)
+- `assets`              (Array)  Array of assets to cache for offline access
+- `service-worker-url`  (String) The `upup.sw.js`'s url, allows placing `upup.js` and `upup.sw.js` in different directories and using CDNs.
 
 # API Reference
 
@@ -101,4 +102,3 @@ debug state on or off.
 * **Boolean** *[newState=true]* - Turn on/off debug messages
 
 <!-- End src/upup.js -->
-

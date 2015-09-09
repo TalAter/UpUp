@@ -75,7 +75,7 @@
 
   // Settings live here, and these are their defaults
   var _settings = {
-    'script': 'upup.sw.min.js'
+    'service-worker-url': 'upup.sw.min.js'
   };
 
   var _debugState = false;
@@ -104,7 +104,7 @@
       this.addSettings(settings);
 
       // register the service worker
-      _serviceWorker.register(_settings.script, {scope: './'}).then(function(registration) {
+      _serviceWorker.register(_settings['service-worker-url'], {scope: './'}).then(function(registration) {
         // Registration was successful
         if (_debugState) {
           console.log('ServiceWorker registration successful with scope: %c'+registration.scope, _debugStyle);
@@ -149,7 +149,7 @@
       }
 
       // add new settings to our settings object
-      ['content', 'content-url', 'assets'].forEach(function(settingName) {
+      ['content', 'content-url', 'assets', 'service-worker-url'].forEach(function(settingName) {
         _settings[settingName] = settings[settingName] || null;
       });
     },
