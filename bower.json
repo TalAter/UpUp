@@ -1,27 +1,24 @@
 {
-  "name": "UpUp",
-  "version": "0.1.0",
+  "name": "upup",
+  "homepage": "https://www.talater.com/upup/",
+  "authors": [
+    "Tal Ater <tal@talater.com> (https://www.talater.com/)"
+  ],
   "description": "Control the content users see, even when they're offline",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/TalAter/UpUp.git"
-  },
+  "main": [
+    "dist/upup.min.js",
+    "dist/upup.sw.min.js"
+  ],
+  "moduleType": [
+    "globals"
+  ],
   "keywords": [
     "offline",
     "offlinefirst",
     "cache",
     "serviceworker"
   ],
-  "author": "Tal Ater <tal@talater.com> (https://www.talater.com/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TalAter/UpUp/issues"
-  },
-  "homepage": "https://github.com/TalAter/UpUp",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-compress": "^0.13.0",
@@ -32,5 +29,18 @@
     "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-markdox": "^1.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TalAter/UpUp.git"
   }
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json",
+    "demo"
+  ]
 }
