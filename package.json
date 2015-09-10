@@ -1,7 +1,7 @@
 {
   "name": "UpUp",
   "version": "0.1.0",
-  "description": "Make sure your site never goes… !up.",
+  "description": "Control the content users see, even when they're offline",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,8 +12,9 @@
   },
   "keywords": [
     "offline",
+    "offlinefirst",
     "cache",
-    "uptime"
+    "serviceworker"
   ],
   "author": "Tal Ater <tal@talater.com> (https://www.talater.com/)",
   "license": "MIT",
