@@ -1,0 +1,27 @@
+{
+  "name": "upup",
+  "homepage": "https://github.com/TalAter/UpUp",
+  "authors": [
+    "Tal Ater <tal@talater.com> (https://www.talater.com/)"
+  ],
+  "description": "Make sure your site never goes… !up.",
+  "main": [
+    "dist/upup.min.js",
+    "dist/upup.sw.min.js"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "offline",
+    "cache",
+    "uptime"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Gruntfile.js"
+  ]
+}
