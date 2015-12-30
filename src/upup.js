@@ -150,7 +150,9 @@
 
       // add new settings to our settings object
       ['content', 'content-url', 'assets', 'service-worker-url'].forEach(function(settingName) {
-        _settings[settingName] = settings[settingName] || null;
+        if (settings[settingName] !== undefined) {
+          _settings[settingName] = settings[settingName];
+        }
       });
     },
 
