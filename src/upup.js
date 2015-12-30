@@ -35,7 +35,21 @@
    *
    * This means that if you placed the files in your `/js/` directory, UpUp will only be able to show your offline content when users try to look inside the `/js/` directory.
    *
-   * **This is why you should always place the script as close to the root of your site as possible (e.g. https://www.talater.com/upup.min.js).**
+   * **This is why you should almost always place the script as close to the root of your site as possible (e.g. https://www.talater.com/upup.min.js).**
+   *
+   * #### Scope - Advanced
+   * It is possible to keep `upup.min.js` outside the scope (e.g. in a CDN), as long as `upup.sw.min.js` is kept local (that file's location determines the scope).
+   * If you choose to keep the two in separate directories, make sure to pass the `service-worker-url` [setting](https://github.com/TalAter/UpUp/tree/master/docs#settings).
+   * ````html
+   * <script src="//cdnjs.cloudflare.com/ajax/libs/UpUp/0.1.0/upup.min.js"></script>
+   * <script>
+   * UpUp.start({
+   *   'content-url': 'offline.html',
+   *   'assets': ['/img/logo.png', '/css/style.css', 'headlines.json'],
+   *   'service-worker-url': '/upup.sw.min.js'
+   * });
+   * </script>
+   * ````
    *
    * ## Settings
    *
@@ -52,9 +66,11 @@
    *
    *
    * The settings object supports the following options:
-   * - `content-url`  (String) The content to display when user is offline (url to the content that will be served)
-   * - `content`      (String) The content to display when user is offline (plain text, HTML, etc.)
-   * - `assets`       (Array)  Array of assets to cache for offline access
+   * - `content-url`        (String)  The content to display when user is offline (url to the content that will be served)
+   * - `content`            (String)  The content to display when user is offline (plain text, HTML, etc.)
+   * - `assets`             (Array)   Array of assets to cache for offline access
+   * - `service-worker-url` (String)  The url to the service worker file (`upup.sw.min.js`)
+   *                                  Allows loading `upup.min.js` from a CDN while `upup.sw.min.js` stays local (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
    *
    * # API Reference
    */
@@ -75,7 +91,7 @@
 
   // Settings live here, and these are their defaults
   var _settings = {
-    'script': 'upup.sw.min.js'
+    'service-worker-url': 'upup.sw.min.js'
   };
 
   var _debugState = false;
@@ -104,7 +120,7 @@
       this.addSettings(settings);
 
       // register the service worker
-      _serviceWorker.register(_settings.script, {scope: './'}).then(function(registration) {
+      _serviceWorker.register(_settings['service-worker-url'], {scope: './'}).then(function(registration) {
         // Registration was successful
         if (_debugState) {
           console.log('ServiceWorker registration successful with scope: %c'+registration.scope, _debugStyle);
@@ -149,8 +165,10 @@
       }
 
       // add new settings to our settings object
-      ['content', 'content-url', 'assets'].forEach(function(settingName) {
-        _settings[settingName] = settings[settingName] || null;
+      ['content', 'content-url', 'assets', 'service-worker-url'].forEach(function(settingName) {
+        if (settings[settingName] !== undefined) {
+          _settings[settingName] = settings[settingName];
+        }
       });
     },
 
