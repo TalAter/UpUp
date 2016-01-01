@@ -57,13 +57,14 @@
    * same settings object directly to the start() method.
    *
    * #### Examples:
-   *     // Set up offline mode with a basic message
-   *     UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
-   *     UpUp.start();
+   * ````javascript
+   * // Set up offline mode with a basic message
+   * UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
+   * UpUp.start();
    *
-   *     // The same thing can be achieved like this
-   *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
-   *
+   * // The same thing can be achieved like this
+   * UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+   * ````
    *
    * The settings object supports the following options:
    * - `content-url`        (String)  The content to display when user is offline (url to the content that will be served)
@@ -107,11 +108,13 @@
      * See Settings section of docs for details.
      *
      * #### Examples:
-     *     // Set up offline mode with a basic message
-     *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+     * ````javascript
+     * // Set up offline mode with a basic message
+     * UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
      *
-     *     // Set up offline mode with the settings defined previously via addSettings()
-     *     UpUp.start();
+     * // Set up offline mode with the settings defined previously via addSettings()
+     * UpUp.start();
+     * ````
      *
      * @param {Object} [settings] - Settings for offline mode
      * @method start
@@ -145,12 +148,14 @@
      * Receives a mandatory settings object. See Settings section of docs for details.
      *
      * #### Examples:
-     *     // Set up offline mode with a basic message
-     *     UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
-     *     UpUp.start();
+     * ````javascript
+     * // Set up offline mode with a basic message
+     * UpUp.addSettings({ content: 'Cannot reach site. Please check your internet connection.' });
+     * UpUp.start();
      *
-     *     // The same thing can be achieved like this
-     *     UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+     * // The same thing can be achieved like this
+     * UpUp.start({ content: 'Cannot reach site. Please check your internet connection.' });
+     * ````
      *
      * @param {Object} [settings] - Settings for offline mode
      * @method addSettings
