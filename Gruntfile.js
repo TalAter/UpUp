@@ -21,7 +21,7 @@ module.exports = function(grunt) {
       all: {
         files: {
           'dist/upup.min.js': ['src/upup.js'],
-          'dist/upup.sw.min.js': ['src/vendor/serviceworker-cache-polyfill.js', 'src/upup.sw.js'],
+          'dist/upup.sw.min.js': ['src/vendor/serviceworker-cache-polyfill.js', 'src/upup.sw.js']
         }
       }
     },
@@ -35,11 +35,11 @@ module.exports = function(grunt) {
           src: ['*.{png,jpg,gif}'],       // Actual patterns to match
           dest: 'demo/img'                // Destination path prefix
         }]
-      },
+      }
     },
     watch: {
       files: ['src/**', 'demo/css/online.css', '!**/node_modules/**'],
-      tasks: ['devwatcher'],
+      tasks: ['devwatcher']
     },
     connect: {
       server: {
