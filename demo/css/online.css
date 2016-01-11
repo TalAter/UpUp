@@ -142,9 +142,9 @@ div.callout-4 {
 }
 div.callout {
   background-color: #f5f5f5;
-  -webkit-box-shadow: 0px 0px 0px 1px rgba(235,235,235,1);
-  -moz-box-shadow: 0px 0px 0px 1px rgba(235,235,235,1);
-  box-shadow: 0px 0px 0px 1px rgba(235,235,235,1);
+  -webkit-box-shadow: 0 0 0 1px rgba(235,235,235,1);
+  -moz-box-shadow: 0 0 0 1px rgba(235,235,235,1);
+  box-shadow: 0 0 0 1px rgba(235,235,235,1);
   padding: 18px 28px 6px 28px;
   margin-bottom: 22px;
   text-align: justify;
