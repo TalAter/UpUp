@@ -3,8 +3,7 @@
   "version": "0.2.0",
   "description": "Control the content users see, even when they're offline",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/TalAter/UpUp.git"
@@ -28,7 +27,7 @@
     "grunt-contrib-connect": "^0.11.2",
     "grunt-contrib-cssmin": "^0.14.0",
     "grunt-contrib-imagemin": "^1.0.0",
-    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-jshint": "^0.12.0",
     "grunt-contrib-uglify": "^0.11.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-markdox": "^1.2.1"
