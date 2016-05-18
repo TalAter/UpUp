@@ -1,6 +1,6 @@
 
 //! UpUp ServiceWorker
-//! version : 0.2.0
+//! version : 0.3.0
 //! author  : Tal Ater @TalAter
 //! license : MIT
 //! https://github.com/TalAter/UpUp

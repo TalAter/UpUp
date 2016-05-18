@@ -35,7 +35,7 @@ This means that if you placed the files in your `/js/` directory, UpUp will only
 It is possible to keep `upup.min.js` outside the scope (e.g. in a CDN), as long as `upup.sw.min.js` is kept local (that file's location determines the scope).
 If you choose to keep the two in separate directories, make sure to pass the `service-worker-url` [setting](https://github.com/TalAter/UpUp/tree/master/docs#settings).
 ````html
-<script src="//cdnjs.cloudflare.com/ajax/libs/UpUp/0.2.0/upup.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/UpUp/0.3.0/upup.min.js"></script>
 <script>
 UpUp.start({
   'content-url': 'offline.html',
