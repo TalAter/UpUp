@@ -31,8 +31,8 @@ self.addEventListener('fetch', function(event) {
           return response;
         }
         // if not found in cache, return default offline content
-        // (only if this is a text/html request. Thanks @jeffposnick)
-        if (event.request.headers.get('accept').includes('text/html')) {
+        // (only if this is a navigation request. In older browsers we check if this is a text/html request. Thanks @jeffposnick)
+        if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
           return caches.match('sw-offline-content');
         }
       })
