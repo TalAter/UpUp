@@ -6,7 +6,22 @@
 //! https://github.com/TalAter/UpUp
 
 // Name of our cache
-var _CACHE_NAME = 'upup-cache';
+var _CACHE_NAME_PREFIX = 'upup-cache';
+
+// Receives an input and calculates a hash for it
+var _calculateHash = function(input) {
+  input = input.toString();
+  var hash = 0, i, chr, len = input.length;
+  if (len === 0) {
+    return hash;
+  }
+  for (i = 0; i < len; i++) {
+    chr = input.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
+    hash |= 0;
+  }
+  return hash;
+};
 
 // Register message event listener
 self.addEventListener('message', function(event) {
@@ -37,7 +52,11 @@ self.addEventListener('fetch', function(event) {
 });
 
 var _setSettings = function(settings) {
-  return caches.open(_CACHE_NAME).then(function(cache) {
+  var newCacheName =
+    _CACHE_NAME_PREFIX + '-' +
+    (settings['cache-version'] || 'v1') + '-' +
+    _calculateHash(settings['content'] + settings['content-url'] + settings['assets']);
+  return caches.open(newCacheName).then(function(cache) {
     // Store our offline content in the cache
     if (settings['assets']) {
       cache.addAll(settings['assets'].map(function(urlToPrefetch) {
@@ -56,6 +75,17 @@ var _setSettings = function(settings) {
     } else {
       return cache.put('sw-offline-content', _buildResponse("You are offline"));
     }
+  }).then(function() {
+    // Delete old caches
+    return caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (cacheName.startsWith(_CACHE_NAME_PREFIX) && newCacheName !== cacheName) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    });
   });
 };
 

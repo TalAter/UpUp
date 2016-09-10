@@ -25,6 +25,7 @@ Service workers, and thus UpUp, only work when the user is accessing your server
 During development you can also use UpUp through localhost or file (e.g. both http://localhost/ and file:///Users/tal/index.html are ok)
 
 ### Scope
+
 UpUp can only serve offline content for requests within its scope. The scope is determined by where you placed the `upup.min.js` and `upup.sw.min.js` files.
 
 This means that if you placed the files in your `/js/` directory, UpUp will only be able to show your offline content when users try to look inside the `/js/` directory.
@@ -45,6 +46,35 @@ UpUp.start({
 </script>
 ````
 
+### Cache Versions
+
+When visitors visit your page while they are online, UpUp will store the files you define in the settings object in their cache.
+
+These files will be downloaded again and updated in the cache everytime you change either `content`, `content-url`, or `assets`.
+
+If the content of your files changed, but none of the filenames changed, you may want to manually tell UpUp to update the cache anyway. For this purpose you can use a `cache-version`.
+
+For example, consider the following:
+
+````javascript
+UpUp.start({
+  'content-url': '/offline.html',
+  'assets': ['/img/logo.png']
+});
+````
+
+If you were to add another file to the `assets` array, UpUp would know it had to download and store a new cache. If however, the file is within the contents of `/offline.html` you will need to signal UpUp everytime a version changes by changing the `cache-version`:
+
+````javascript
+UpUp.start({
+  'cache-version': 'v2',
+  'content-url': '/offline.html',
+  'assets': ['/img/logo.png']
+});
+````
+
+Everytime you change the value of `cache-version`, the entire cache will be refreshed with new files.
+
 ## Settings
 
 UpUp can be configured either by calling addSettings() with a settings object, or by passing the
@@ -64,6 +94,7 @@ The settings object supports the following options:
 - `content-url`        (String)  The content to display when user is offline (url to the content that will be served)
 - `content`            (String)  The content to display when user is offline (plain text, HTML, etc.)
 - `assets`             (Array)   Array of assets to cache for offline access
+- `cache-version`      (String|Number) Optional version number, change this when offline files change. UpUp will download and cache all content-url and assets files again
 - `service-worker-url` (String)  The url to the service worker file (`upup.sw.min.js`)
                                  Allows loading `upup.min.js` from a CDN while `upup.sw.min.js` stays local (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
 
