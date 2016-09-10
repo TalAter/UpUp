@@ -47,7 +47,8 @@ module.exports = function(grunt) {
           protocol: 'http',
           port: 8443,
           hostname: '*',
-          base: '.'
+          base: '.',
+          open: 'http://localhost:8443/demo'
         }
       }
     },
