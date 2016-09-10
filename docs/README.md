@@ -12,15 +12,15 @@ Once you're ready for a more in-depth look at the UpUp API, read on.
 
 # Good to Know
 
-## ServiceWorker
+## Service Worker
 
-At the heart of UpUp are ServiceWorkers - a new web technology, which allows developers to take control and shape user's requests to their server.
+At the heart of UpUp are *service workers* - a new web technology, which allows developers to take control and shape user's requests to their server.
 
-While UpUp abstracts much of ServiceWorkers' complexity, browser compatibility issues and flattens the learning curve, there are a few things to be aware of.
+While UpUp abstracts much of service workers' complexity, their browser compatibility issues, and flattens the learning curve, there are a few things to be aware of.
 
 ### HTTPS only
 
-ServiceWorkers, and thus UpUp, only work when the user is accessing your server over a secure connection.
+Service workers, and thus UpUp, only work when the user is accessing your server over a secure connection.
 
 During development you can also use UpUp through localhost or file (e.g. both http://localhost/ and file:///Users/tal/index.html are ok)
 

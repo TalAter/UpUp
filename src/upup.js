@@ -18,15 +18,15 @@
    *
    * # Good to Know
    *
-   * ## ServiceWorker
+   * ## Service Worker
    *
-   * At the heart of UpUp are ServiceWorkers - a new web technology, which allows developers to take control and shape user's requests to their server.
+   * At the heart of UpUp are *service workers* - a new web technology, which allows developers to take control and shape user's requests to their server.
    *
-   * While UpUp abstracts much of ServiceWorkers' complexity, browser compatibility issues and flattens the learning curve, there are a few things to be aware of.
+   * While UpUp abstracts much of service workers' complexity, their browser compatibility issues, and flattens the learning curve, there are a few things to be aware of.
    *
    * ### HTTPS only
    *
-   * ServiceWorkers, and thus UpUp, only work when the user is accessing your server over a secure connection.
+   * Service workers, and thus UpUp, only work when the user is accessing your server over a secure connection.
    *
    * During development you can also use UpUp through localhost or file (e.g. both http://localhost/ and file:///Users/tal/index.html are ok)
    *
@@ -79,12 +79,12 @@
   // Save a reference to the global object (window in the browser)
   var _root = this;
 
-  // get ServiceWorker object
+  // get service worker object
   var _serviceWorker = navigator.serviceWorker;
 
   // Check browser support
   // This is done as early as possible, to make it as fast as possible for unsupported browsers
-  // Requires ServiceWorker
+  // Requires service worker
   if (!_serviceWorker) {
     _root.UpUp = null;
     return undefined;
@@ -126,17 +126,17 @@
       _serviceWorker.register(_settings['service-worker-url'], {scope: './'}).then(function(registration) {
         // Registration was successful
         if (_debugState) {
-          console.log('ServiceWorker registration successful with scope: %c'+registration.scope, _debugStyle);
+          console.log('Service worker registration successful with scope: %c'+registration.scope, _debugStyle);
         }
 
-        // Send the settings to the ServiceWorker
+        // Send the settings to the service worker
         var messenger = registration.installing || _serviceWorker.controller;
         messenger.postMessage({'action': 'set-settings', 'settings': _settings});
 
       }).catch(function(err) {
         // registration failed :(
         if (_debugState) {
-          console.log('ServiceWorker registration failed: %c'+err, _debugStyle);
+          console.log('Service worker registration failed: %c'+err, _debugStyle);
         }
       });
     },

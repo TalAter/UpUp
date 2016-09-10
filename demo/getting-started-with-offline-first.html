@@ -99,9 +99,9 @@
         <p>With just this tiny bit of code, we've added an offline experience for our site, and allowed our users to see the best hotels in Rome&hellip; even when they can't access the web.</p>
         <div class="callout callout-1">
           <h4>How Does It Work?</h4>
-          <p>UpUp uses ServiceWorkers to determine when network requests fail. A ServiceWorker is a special script that runs in the browser in the background, and can see the status of network requests.</p>
-          <p>When the user first visits your site, UpUp registers a ServiceWorker with your browser, and gives it a list of files to cache for later.</p>
-          <p>The next time the user visits your site, the ServiceWorker listens for network errors. If a network request fails, and the ServiceWorker finds that file in the cache, it will return that file, as if it came from the network.</p>
+          <p>UpUp uses service workers to determine when network requests fail. A service worker is a special script that runs in the browser in the background, and can see the status of network requests.</p>
+          <p>When the user first visits your site, UpUp registers a service worker with your browser, and gives it a list of files to cache for later.</p>
+          <p>The next time the user visits your site, the service worker listens for network errors. If a network request fails, and the service worker finds that file in the cache, it will return that file, as if it came from the network.</p>
         </div>
         <h3>Creating a rich offline experience</h3>
         <p>While this is already quite impressive, it still doesn't look anything like our online version. Let's improve the offline version with more content and our design.</p>
@@ -150,8 +150,8 @@
 
         <div class="callout callout-2">
           <h4>Where Should I Place My Files?</h4>
-          <p>For security reasons, the browser only lets UpUp's ServiceWorker see network requests within its scope.</p>
-          <p>The scope that the ServiceWorker can affect is determined by where you placed <code>upup.min.js</code> and <code>upup.sw.min.js</code>. For example, if you place it on <code>https://yoursite.com/js/upup.sw.min.js</code>, UpUp will only be able to show your offline content when users try to look at the <code>/js/</code> directory.</p>
+          <p>For security reasons, the browser only lets UpUp's service worker see network requests within its scope.</p>
+          <p>The scope that the service worker can affect is determined by where you placed <code>upup.min.js</code> and <code>upup.sw.min.js</code>. For example, if you place it on <code>https://yoursite.com/js/upup.sw.min.js</code>, UpUp will only be able to show your offline content when users try to look at the <code>/js/</code> directory.</p>
           <p>This is why it is important to place both files on the same server as your content, and not in a subdirectory. This should idealy be in the root of your site (e.g. https://yoursite.com/upup.min.js).</p>
         </div>
 
@@ -174,7 +174,7 @@
 
         <div class="callout callout-3">
           <h4>HTTPS Only</h4>
-          <p>To preserve the user's security and privacy, ServiceWorkers can only detect requests over a secure connection.</p>
+          <p>To preserve the user's security and privacy, service worker can only detect requests over a secure connection.</p>
           <p>During development you can use UpUp through localhost or file (e.g. both <code>http://localhost/</code> and <code>file:///Users/tal/index.html</code> are ok), but to deploy it to production you'll need to have HTTPS set up on your server.</p>
           <p>This is a requirement for many new web technologies, and SSL certificates go for as little as $5, so don't let that stop you&hellip; progress is coming.</p>
         </div>

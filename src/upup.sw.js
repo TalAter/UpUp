@@ -1,5 +1,5 @@
 
-//! UpUp ServiceWorker
+//! UpUp Service Worker
 //! version : 0.3.0
 //! author  : Tal Ater @TalAter
 //! license : MIT
