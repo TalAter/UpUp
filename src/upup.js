@@ -54,11 +54,13 @@
    *
    * ### Cache Versions
    *
-   * When visitors visit your page while they are online, UpUp will store the files you define in the settings object in their cache.
+   * When users visit your page, UpUp stores the files needed to display the offline content in their cache.
    *
-   * These files will be downloaded again and updated in the cache everytime you change either `content`, `content-url`, or `assets`.
+   * When you make a change to your offline site, these files need to be downloaded again, and updated in the cache.
    *
-   * If the content of your files changed, but none of the filenames changed, you may want to manually tell UpUp to update the cache anyway. For this purpose you can use a `cache-version`.
+   * This cache update happens automatically everytime you change the value of `content`, `content-url`, or `assets` (e.g. changing `content-url` from `offline-v1.html` to `offline-v2.html`).
+   *
+   * If you changed the content of one of those files, but none of the filenames changed, you may want to manually tell UpUp to update the cache anyway. For this purpose you can use a `cache-version`.
    *
    * For example, consider the following:
    *
@@ -69,7 +71,7 @@
    * });
    * ````
    *
-   * If you were to add another file to the `assets` array, UpUp would know it had to download and store a new cache. If however, the file is within the contents of `/offline.html` you will need to signal UpUp everytime a version changes by changing the `cache-version`:
+   * If you were to add another file to the `assets` array, UpUp would know it had to download and store a new cache. If however, the change is within the contents of `/offline.html` you will need to signal UpUp that it needs to update the cache by changing the `cache-version`:
    *
    * ````javascript
    * UpUp.start({
@@ -79,7 +81,7 @@
    * });
    * ````
    *
-   * Everytime you change the value of `cache-version`, the entire cache will be refreshed with new files.
+   * Everytime you change the value of `cache-version`, all the files needed to display the offline content will download again and be saved in the user's cache.
    *
    * ## Settings
    *
