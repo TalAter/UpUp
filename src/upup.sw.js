@@ -54,7 +54,7 @@ self.addEventListener('fetch', function(event) {
 var _setSettings = function(settings) {
   var newCacheName =
     _CACHE_NAME_PREFIX + '-' +
-    (settings['cache-version'] || 'v1') + '-' +
+    (settings['cache-version'] ? (settings['cache-version'] + '-') : '') +
     _calculateHash(settings['content'] + settings['content-url'] + settings['assets']);
   return caches.open(newCacheName).then(function(cache) {
     // Store our offline content in the cache
