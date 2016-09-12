@@ -27,7 +27,7 @@ var _calculateHash = function(input) {
 self.addEventListener('message', function(event) {
   // place offline message in cache
   if (event.data.action === 'set-settings') {
-    _setSettings(event.data.settings)
+    _parseSettingsAndCache(event.data.settings)
   }
 });
 
@@ -51,7 +51,7 @@ self.addEventListener('fetch', function(event) {
   );
 });
 
-var _setSettings = function(settings) {
+var _parseSettingsAndCache = function(settings) {
   var newCacheName =
     _CACHE_NAME_PREFIX + '-' +
     (settings['cache-version'] ? (settings['cache-version'] + '-') : '') +
