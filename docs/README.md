@@ -156,3 +156,4 @@ debug state on or off.
 * **Boolean** *[newState=true]* - Turn on/off debug messages
 
 <!-- End src/upup.js -->
+

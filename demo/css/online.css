@@ -54,6 +54,10 @@ p,li {
 p {
   margin-bottom: 22px;
 }
+p a {
+  font-weight: bold;
+  text-decoration: underline;
+}
 div.show-and-tell {
   margin-top: -75px;
   margin-bottom: 65px;
