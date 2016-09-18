@@ -2,7 +2,7 @@
   "name": "upup",
   "version": "0.3.0",
   "description": "Control the content users see, even when they're offline",
-  "main": "index.js",
+  "main": "src/upup.js",
   "scripts": {},
   "repository": {
     "type": "git",
