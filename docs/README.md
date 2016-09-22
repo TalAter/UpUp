@@ -22,7 +22,7 @@ While UpUp abstracts much of service workers' complexity, their browser compatib
 
 Service workers, and thus UpUp, only work when the user is accessing your server over a secure connection.
 
-During development you can also use UpUp through localhost or file (e.g. both http://localhost/ and file:///Users/tal/index.html are ok)
+During development you can also use UpUp through localhost (e.g. http://localhost/ or http://localhost:1234/)
 
 ### Scope
 
