@@ -37,7 +37,7 @@ self.addEventListener('fetch', function(event) {
     // try to return untouched request from network first
     fetch(event.request).catch(function() {
       // if it fails, try to return request from the cache
-      return caches.match(event.request).then(function(response) {
+      return caches.match(event.request, {ignoreVary: true}).then(function(response) {
         if (response) {
           return response;
         }
