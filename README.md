@@ -1,4 +1,6 @@
 ### UpUp - Kickstarting the Offline First Revolution
+
+[![Join the chat at https://gitter.im/TalAter/UpUp](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/TalAter/UpUp?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 <a href="https://www.talater.com/upup/"><img align="right" src="demo/img/upup-readme.gif" alt="Offline First with UpUp"></a>
 
 UpUp is a tiny JavaScript library that makes sure your users can always access your site's content, even when they're on a plane, in an elevator, or 20,000 leagues under the sea.
