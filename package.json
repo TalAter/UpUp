@@ -30,7 +30,7 @@
     "grunt-contrib-cssmin": "^2.0.0",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^2.2.1",
+    "grunt-contrib-uglify": "^3.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-markdox": "^1.2.1",
     "load-grunt-tasks": "^3.5.2"
