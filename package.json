@@ -27,7 +27,7 @@
     "async": "^2.0.1",
     "grunt-contrib-compress": "^1.4.1",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-cssmin": "^2.2.0",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^3.0.0",

@@ -289,9 +289,9 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-clean-css@~4.0.3:
-  version "4.0.11"
-  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.0.11.tgz#a6d88bffb399420b24298db49d99a1ed067534a8"
+clean-css@~4.1.1:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.2.tgz#6029aea30b1d9520a968a3caee0dabb1184e353a"
   dependencies:
     source-map "0.5.x"
 
@@ -594,6 +594,10 @@ duplexer2@^0.1.4, duplexer2@~0.1.0:
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.1.4.tgz#8b12dab878c0d69e3e7891051662a32fc6bddcc1"
   dependencies:
     readable-stream "^2.0.2"
+
+duplexer@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/duplexer/-/duplexer-0.1.1.tgz#ace6ff808c1ce66b57d1ebf97977acb02334cfc1"
 
 duplexify@^3.2.0:
   version "3.5.0"
@@ -999,13 +1003,13 @@ grunt-contrib-connect@^1.0.2:
     serve-index "^1.7.1"
     serve-static "^1.10.0"
 
-grunt-contrib-cssmin@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-cssmin/-/grunt-contrib-cssmin-2.0.0.tgz#3bc8e8c8865c819159cc2779f82fcf833473345b"
+grunt-contrib-cssmin@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-cssmin/-/grunt-contrib-cssmin-2.2.0.tgz#72def40628ee8e213ad9a76804d131db66604a41"
   dependencies:
     chalk "^1.0.0"
-    clean-css "~4.0.3"
-    maxmin "^1.1.0"
+    clean-css "~4.1.1"
+    maxmin "^2.1.0"
 
 grunt-contrib-imagemin@^1.0.1:
   version "1.0.1"
@@ -1162,6 +1166,12 @@ gzip-size@^1.0.0:
   dependencies:
     browserify-zlib "^0.1.4"
     concat-stream "^1.4.1"
+
+gzip-size@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gzip-size/-/gzip-size-3.0.0.tgz#546188e9bdc337f673772f81660464b389dce520"
+  dependencies:
+    duplexer "^0.1.1"
 
 has-ansi@^2.0.0:
   version "2.0.0"
@@ -1751,6 +1761,15 @@ maxmin@^1.1.0:
     gzip-size "^1.0.0"
     pretty-bytes "^1.0.0"
 
+maxmin@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/maxmin/-/maxmin-2.1.0.tgz#4d3b220903d95eee7eb7ac7fa864e72dc09a3166"
+  dependencies:
+    chalk "^1.0.0"
+    figures "^1.0.1"
+    gzip-size "^3.0.0"
+    pretty-bytes "^3.0.0"
+
 mdurl@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
@@ -2079,7 +2098,7 @@ pretty-bytes@^1.0.0:
     get-stdin "^4.0.1"
     meow "^3.1.0"
 
-pretty-bytes@^3.0.1:
+pretty-bytes@^3.0.0, pretty-bytes@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-3.0.1.tgz#27d0008d778063a0b4811bb35c79f1bd5d5fbccf"
   dependencies:
