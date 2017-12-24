@@ -163,7 +163,7 @@
         }
 
         // Send the settings to the service worker
-        var messenger = registration.installing || _serviceWorker.controller;
+        var messenger = registration.installing || _serviceWorker.controller || registration.active;
         messenger.postMessage({'action': 'set-settings', 'settings': _settings});
 
       }).catch(function(err) {
