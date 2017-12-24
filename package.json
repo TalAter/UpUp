@@ -25,6 +25,7 @@
   "devDependencies": {
     "async": "^2.0.1",
     "grunt": "^0.4.5",
+    "grunt-cli": "^1.2.0",
     "grunt-contrib-compress": "^1.4.1",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-cssmin": "^2.2.0",
