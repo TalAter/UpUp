@@ -23,15 +23,15 @@
     "start": "grunt dev"
   },
   "devDependencies": {
-    "async": "^2.0.1",
+    "async": "^2.6.0",
     "grunt": "^0.4.5",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-compress": "^1.4.1",
+    "grunt-contrib-compress": "^1.4.3",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-cssmin": "^2.2.0",
-    "grunt-contrib-imagemin": "^2.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-uglify": "^3.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-markdox": "^1.2.1",
     "load-grunt-tasks": "^3.5.2"
