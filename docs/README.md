@@ -99,6 +99,7 @@ The settings object supports the following options:
 - `cache-version`      (String|Number) Optional version number, change this when offline files change. UpUp will download and cache all content-url and assets files again
 - `service-worker-url` (String)  The url to the service worker file (`upup.sw.min.js`)
                                  Allows loading `upup.min.js` from a CDN while `upup.sw.min.js` stays local (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
+- `registration-options` (Object) An object containing registration options for ServiceWorkerContainer.register().
 
 # API Reference
 
