@@ -28,7 +28,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-contrib-compress": "^1.4.3",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-imagemin": "^2.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^3.3.0",
