@@ -52,6 +52,9 @@
    * </script>
    * ````
    *
+   * It is also possible to modify the scope that UpUp will control by using the [scope setting](https://github.com/TalAter/UpUp/tree/master/docs#settings). Note that this scope must be contained at the same level as the service worker file, or deeper.
+   * e.g., If `upup.sw.min.js` is located at the root of your site you can limit the scope to the root (default behavior) or a subdirectory under it. If `upup.sw.min.js` is located in a subdirectory you can limit the scope to that subdirectory (default behavior), a subdirectory within the first subdirectory, but not a different subdirectory under the root, or the root.
+   *
    * ### Cache Versions
    *
    * When users visit your page, UpUp stores the files needed to display the offline content in their cache.
@@ -105,6 +108,7 @@
    * - `cache-version`      (String|Number) Optional version number, change this when offline files change. UpUp will download and cache all content-url and assets files again
    * - `service-worker-url` (String)  The url to the service worker file (`upup.sw.min.js`)
    *                                  Allows loading `upup.min.js` from a CDN while `upup.sw.min.js` stays local (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
+   * - `scope`              (String)  The scope to limit the service worker to (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
    *
    * # API Reference
    */
@@ -126,6 +130,7 @@
   // Settings live here, and these are their defaults
   var _settings = {
     'service-worker-url': 'upup.sw.min.js',
+    'registration-options': {},
   };
 
   var _debugState = false;
@@ -133,6 +138,7 @@
 
   // Expose functionality
   _root.UpUp = {
+
     /**
      * Make this site available offline
      *
@@ -155,7 +161,7 @@
       this.addSettings(settings);
 
       // register the service worker
-      _serviceWorker.register(_settings['service-worker-url'], {scope: './'}).then(function(registration) {
+      _serviceWorker.register(_settings['service-worker-url'], _settings['registration-options']).then(function(registration) {
         // Registration was successful
         if (_debugState) {
           console.log('Service worker registration successful with scope: %c'+registration.scope, _debugStyle);
@@ -213,6 +219,11 @@
           _settings[settingName] = settings[settingName];
         }
       });
+
+      // Add scope setting
+      if (settings['scope'] !== undefined) {
+        _settings['registration-options']['scope'] = settings['scope'];
+      }
     },
 
     /**
