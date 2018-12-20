@@ -127,7 +127,7 @@
   // Settings live here, and these are their defaults
   var _settings = {
     'service-worker-url': 'upup.sw.min.js',
-    'registration-options': {scope: './'},
+    'registration-options': {},
   };
 
   var _debugState = false;
