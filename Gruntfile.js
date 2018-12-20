@@ -1,31 +1,28 @@
 module.exports = function(grunt) {
-  "use strict";
+  'use strict';
 
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      all: [
-        'src/upup.js',
-        'Gruntfile.js'
-      ],
+      all: ['src/upup.js', 'Gruntfile.js'],
       options: {
-        jshintrc: true
-      }
+        jshintrc: true,
+      },
     },
     uglify: {
       options: {
         output: {
-          comments: /^\! /
+          comments: /^\! /,
         },
-        sourceMap: true
+        sourceMap: true,
       },
       all: {
         files: {
           'dist/upup.min.js': ['src/upup.js'],
-          'dist/upup.sw.min.js': ['src/upup.sw.js']
-        }
-      }
+          'dist/upup.sw.min.js': ['src/upup.sw.js'],
+        },
+      },
     },
     imagemin: {
       demoimages: {                       // Target
@@ -41,7 +38,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['src/**', 'demo/css/online.css', '!**/node_modules/**'],
-      tasks: ['devwatcher']
+      tasks: ['devwatcher'],
     },
     connect: {
       server: {
@@ -50,44 +47,46 @@ module.exports = function(grunt) {
           port: 8443,
           hostname: '*',
           base: '.',
-          open: 'http://localhost:8443/demo'
-        }
-      }
+          open: 'http://localhost:8443/demo',
+        },
+      },
     },
     cssmin: {
       combine: {
         files: {
-          'demo/css/online.min.css': ['demo/css/online.css']
-        }
-      }
+          'demo/css/online.min.css': ['demo/css/online.css'],
+        },
+      },
     },
     markdox: {
       target: {
-        files: [
-          {src: 'src/upup.js', dest: 'docs/README.md'}
-        ]
-      }
+        files: [{ src: 'src/upup.js', dest: 'docs/README.md' }],
+      },
     },
     compress: {
       main: {
         options: {
-          archive: 'dist/upup.zip'
+          archive: 'dist/upup.zip',
         },
-        files: [
-          {expand: true, cwd: 'dist', src: ['*.js']}
-        ]
-      }
-    }
+        files: [{ expand: true, cwd: 'dist', src: ['*.js'] }],
+      },
+    },
   });
 
   // Load NPM Tasks
   require('load-grunt-tasks')(grunt);
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'uglify', 'markdox', 'imagemin', 'cssmin', 'compress']);
+  grunt.registerTask('default', [
+    'jshint',
+    'uglify',
+    'markdox',
+    'imagemin',
+    'cssmin',
+    'compress',
+  ]);
 
   grunt.registerTask('devwatcher', ['jshint', 'uglify', 'cssmin']);
 
   grunt.registerTask('dev', ['default', 'connect', 'watch']);
-
 };
