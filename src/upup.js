@@ -222,7 +222,7 @@
 
       // Add scope setting
       if (settings['scope'] !== undefined) {
-        _settings['registration-options']['scope'] = settings[scope];
+        _settings['registration-options']['scope'] = settings['scope'];
       }
     },
 
