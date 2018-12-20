@@ -105,7 +105,7 @@
    * - `cache-version`      (String|Number) Optional version number, change this when offline files change. UpUp will download and cache all content-url and assets files again
    * - `service-worker-url` (String)  The url to the service worker file (`upup.sw.min.js`)
    *                                  Allows loading `upup.min.js` from a CDN while `upup.sw.min.js` stays local (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
-   * - `registration-options` (Object) An object containing registration options for ServiceWorkerContainer.register().
+   * - `scope`              (String)  The scope to limit the service worker to (see [scope](https://github.com/TalAter/UpUp/blob/master/docs/README.md#scope))
    *
    * # API Reference
    */
@@ -211,12 +211,16 @@
         'assets',
         'service-worker-url',
         'cache-version',
-        'registration-options',
       ].forEach(function(settingName) {
         if (settings[settingName] !== undefined) {
           _settings[settingName] = settings[settingName];
         }
       });
+
+      // Add scope setting
+      if (settings['scope'] !== undefined) {
+        _settings['registration-options']['scope'] = settings[scope];
+      }
     },
 
     /**
