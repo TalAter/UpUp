@@ -1,4 +1,3 @@
-
 //! UpUp Service Worker
 //! version : 1.0.0
 //! author  : Tal Ater @TalAter
@@ -17,7 +16,7 @@ var _calculateHash = function(input) {
   }
   for (i = 0; i < len; i++) {
     chr = input.charCodeAt(i);
-    hash = ((hash << 5) - hash) + chr;
+    hash = (hash << 5) - hash + chr;
     hash |= 0;
   }
   return hash;
@@ -27,7 +26,7 @@ var _calculateHash = function(input) {
 self.addEventListener('message', function(event) {
   // place offline message in cache
   if (event.data.action === 'set-settings') {
-    _parseSettingsAndCache(event.data.settings)
+    _parseSettingsAndCache(event.data.settings);
   }
 });
 
@@ -46,7 +45,7 @@ self.addEventListener('fetch', function(event) {
         if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
           return caches.match('sw-offline-content');
         }
-      })
+      });
     })
   );
 });
@@ -91,6 +90,6 @@ var _parseSettingsAndCache = function(settings) {
 
 var _buildResponse = function(content) {
   return new Response(content, {
-    headers: { 'Content-Type': 'text/html' }
+    headers: { 'Content-Type': 'text/html' },
   });
-}
+};

@@ -4,8 +4,8 @@
 //! license : MIT
 //! https://github.com/TalAter/UpUp
 
-(function (undefined) {
-  "use strict";
+(function(undefined) {
+  'use strict';
 
   /**
    * # Quick Start
@@ -125,7 +125,7 @@
 
   // Settings live here, and these are their defaults
   var _settings = {
-    'service-worker-url': 'upup.sw.min.js'
+    'service-worker-url': 'upup.sw.min.js',
   };
 
   var _debugState = false;
@@ -133,7 +133,6 @@
 
   // Expose functionality
   _root.UpUp = {
-
     /**
      * Make this site available offline
      *
@@ -199,11 +198,17 @@
 
       // if we got a string, instead of a settings object, use that string as the content
       if (typeof settings === 'string') {
-        settings = {'content': settings};
+        settings = { content: settings };
       }
 
       // add new settings to our settings object
-      ['content', 'content-url', 'assets', 'service-worker-url', 'cache-version'].forEach(function(settingName) {
+      [
+        'content',
+        'content-url',
+        'assets',
+        'service-worker-url',
+        'cache-version',
+      ].forEach(function(settingName) {
         if (settings[settingName] !== undefined) {
           _settings[settingName] = settings[settingName];
         }
@@ -224,8 +229,6 @@
       } else {
         _debugState = true;
       }
-    }
-
+    },
   };
-
-}).call(this);
+}.call(this));
