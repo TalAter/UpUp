@@ -53,6 +53,7 @@
    * ````
    *
    * It is also possible to modify the scope that UpUp will control by using the [scope setting](https://github.com/TalAter/UpUp/tree/master/docs#settings). Note that this scope must be contained at the same level as the service worker file, or deeper.
+   *
    * e.g., If `upup.sw.min.js` is located at the root of your site you can limit the scope to the root (default behavior) or a subdirectory under it. If `upup.sw.min.js` is located in a subdirectory you can limit the scope to that subdirectory (default behavior), a subdirectory within the first subdirectory, but not a different subdirectory under the root, or the root.
    *
    * ### Cache Versions
