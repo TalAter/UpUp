@@ -9,7 +9,7 @@ body {
 }
 header {
   text-align: center;
-  background: #323f53 url('../img/sunset.jpg') no-repeat center center fixed;
+  background: #323f53 url('../img/sunset.jpg') no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
